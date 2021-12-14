@@ -1,0 +1,154 @@
+<!-- <router-outlet></router-outlet> -->
+<!-- <section class="p-3">
+    <div class="d-flex align-items-center justify-content-between">
+        <div>
+            <img src="assets/images/logo.png" class="img-fluid" alt="" />
+        </div>
+        <div>
+            <img src="assets/images/user-icon.png" class="img-fluid" alt="" />
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet> -->
+
+<!-- <router-outlet></router-outlet> -->
+<section>
+    <div class="p-2">
+        <ul class="list-unstyled d-flex justify-content-end fz14 mb-0">
+            <li class="me-2">Eng</li>
+            <li class="me-2">|</li>
+            <li class="me-3">عربي</li>
+            <li>
+                My Land Sterling
+                <i class="fa fa-user-circle-o ms-2" aria-hidden="true"></i>
+            </li>
+        </ul>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="assets/images/logo.png" class="img-fluid" alt="" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Project</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Insights</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link red_color" href="#" data-bs-toggle="modal" data-bs-target="#login_part">Get in Touch</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
+<div class="modal" id="login_part">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="login_card text-center">
+        <h3 class="fz40">My Land Sterling</h3>
+        <p class="font_semibold mb-4 fz16">
+          All your real estate solutions in one place.
+        </p>
+        <h4 class="font_medium pt-4 fz20">Welcome!</h4>
+        <p class="font_semibold fz20 mb-4">Sign in to your account</p>
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Email"
+            class="form-control fz16 box_shadow border-0 py-2"
+          />
+        </div>
+        <button
+          class="btn w-100 mb-4 mt-4 fz16 font_medium"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal"
+          data-bs-target="#password_part"
+        >
+          Proceed
+        </button>
+        <p class="fz16 font_regular mb-0">
+          Don’t have an account?
+          <a href="javascript:void(0);" class="text-decoration-none">Sign Up</a>
+                        </p>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="modal" id="password_part">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="login_card text-center">
+                        <h3 class="fz40">My Land Sterling</h3>
+                        <p class="font_semibold mb-4 fz16">
+                            All your real estate solutions in one place.
+                        </p>
+                        <div class="font_medium pt-4 fz50">
+                            <i class="fa fa-user-circle-o ms-2" aria-hidden="true"></i>
+                        </div>
+                        <p class="font_semibold fz20 mb-4">Welcome back Khaled</p>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control fz16 box_shadow border-0 py-2" />
+                        </div>
+                        <button class="btn w-100 mb-4 mt-4 fz16 font_medium">Proceed</button>
+                        <p class="fz16 font_regular mb-0">
+                            <a href="javascript:void(0);" class="text-decoration-none" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#forgot_password">Forgot password?</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-forget-password></app-forget-password>
+<!-- <div class="modal" id="forgot_password">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="login_card text-center">
+        <h3 class="fz40">My Land Sterling</h3>
+        <p class="font_semibold mb-5 fz16">
+          All your real estate solutions in one place.
+        </p>
+        <p class="font_semibold fz20 mb-4">Forgot Password</p>
+        <div class="form-group">
+          <label for="" class="d-block text-start mb-2">Email</label>
+          <input
+            type="email"
+            placeholder="Email Id"
+            class="form-control fz16 box_shadow border-0 py-2"
+          />
+        </div>
+        <button class="btn w-100 mb-4 mt-4 fz16 font_medium">
+          Reset Password
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<router-outlet></router-outlet>

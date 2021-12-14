@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "Exo-regular";
+    src: url("Exo-Regular.woff2") format("woff2"), url("Exo-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Exo-thin";
+    src: url("Exo-Thin.woff2") format("woff2"), url("Exo-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Exo-semibold";
+    src: url("Exo-SemiBold.woff2") format("woff2"), url("Exo-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Exo-bold";
+    src: url("Exo-Bold.woff2") format("woff2"), url("Exo-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Exo-black";
+    src: url("Exo-Black.woff2") format("woff2"), url("Exo-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Exo-extrabold";
+    src: url("Exo-ExtraBold.woff2") format("woff2"), url("Exo-ExtraBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Exo-medium";
+    src: url("Exo-Medium.woff2") format("woff2"), url("Exo-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Exo-light";
+    src: url("Exo-Light.woff2") format("woff2"), url("Exo-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Exo-italic";
+    src: url("Exo-Italic.woff2") format("woff2"), url("Exo-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}

@@ -42,6 +42,7 @@ selectedLng: Number = 0;
   ) { }
 
   ngOnInit(): void {
+<<<<<<< HEAD
     let res = this.homeService.getUserLocation().then(res => {
       console.log('res is', res);
       this.latit = res.lat;
@@ -82,6 +83,17 @@ selectedLng: Number = 0;
        console.log("our final outpt is",this.mark);
 
     })
+=======
+    this.getPropertyList();
+    // this.homeService.getListedProperty().subscribe(res => {
+    //   console.log("all property is", res);
+    // })
+    let res = this.homeService.getUserLocation().then(res => {
+      console.log('res is', res);
+      this.lat = res.lat;
+      this.lng = res.lng;
+    });
+>>>>>>> axay-work
   }
 
  
@@ -100,17 +112,22 @@ selectedLng: Number = 0;
     })
   }
 
-  onCountryChnage(e: any) {
-    console.log('country is', e.target.value)
-    this.country = e.target.value;
-    if (this.country) {
-      this.http.get(`https://partial-land-sterling.cs81.force.com/LandsterlingWebapp/services/apexrest/LandSterling?UserId=0054K000001L99mQAC
-      &country=${this.country}`).subscribe(res => {
-        console.log('res is', res);
-      })
-    }
+  getPropertyList() {
 
+    this.homeService.getListedProperty({
+      UserId: this.userId,
+      city: this.city,
+      country: this.country
+    }).subscribe(data => {
+      console.log('property data', data);
+    })
   }
+
+  onCountryChnage(event: any) {
+    this.country = event.target.value;
+    this.getPropertyList();
+  }
+
 
   openAddPropertyForm() {
     console.log('called property')

@@ -61,7 +61,7 @@ selectedLng: Number = 0;
            lat: this.latit,
            lng: this.lngit,
            label: '',
-           iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4",
+           iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002",
             no:i
          };
          i++;
@@ -71,7 +71,7 @@ selectedLng: Number = 0;
                 lat:data.pba__Latitude_pb__c,
                 lng:data.pba__Longitude_pb__c,
                 label: data.pba__City_pb__c,
-                iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002"
+                iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4"
           } 
           this.mark.push(ov);
 

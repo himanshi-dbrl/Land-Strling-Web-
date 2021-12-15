@@ -168,7 +168,7 @@
                 <div class="" data-aos="zoom-in" data-aos-duration="3000">
                     <!-- <img src="assets/images/map1.png" class="img-fluid w-100" alt="" /> -->
                     <agm-map [latitude]="latit" [longitude]="lngit" class="w-100" id="map" >
-                        <agm-marker *ngFor="let marker of mark" [latitude]="marker.lat" [longitude]="marker.lng" (markerClick)="markerClicked(marker.lat,marker.lng)" > [iconUrl]="marker.iconUrl" >
+                        <agm-marker *ngFor="let marker of mark" [latitude]="marker.lat" [longitude]="marker.lng" (markerClick)="markerClicked(marker.lat,marker.lng)"  [iconUrl]="marker.iconUrl" >
                             <agm-info-window #infoWindow >
                                 {{ marker.label }}
                             </agm-info-window>

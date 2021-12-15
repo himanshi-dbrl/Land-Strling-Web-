@@ -204,11 +204,11 @@
                     <span class="text-primary">browse</span>
                   </label>
                                     <input type="file" formControlName="image" (change)="getFileDetails($event)" name="image" class="d-none" id="upload_img" />
-                                    <div *ngIf="submitted && f.image.errors" class="text-left">
+                                    <!-- <div *ngIf="submitted && f.image.errors" class="text-left">
                                         <div *ngIf="f.image.errors.required" class="validation_color text-danger">
                                             Image Field is Mandatory!
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

@@ -1,30 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddPropertyComponent } from '../add-property/add-property.component';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/modules/service/home.service';
+import { fromEvent } from 'rxjs';
+import { HttpClient } from "@angular/common/http";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   showHeadFilter: boolean = false
   showFooterFilter: boolean = false;
   lat: any;
   lng: any;
+  city: string = null;
+  country: string = null;
+  state: string = null;
+  propertyUse: string = null;
+  propertyType: string = null;
+  propertyStatus: string = null;
+  userId: any = '0054K000001L99mQAC';
   constructor(
     // public dialog: MatDialog
+    private http: HttpClient,
     public dialog: MatDialog,
     private router: Router,
     private homeService: HomeService
   ) { }
 
   ngOnInit(): void {
-    this.homeService.getListedProperty('0054K000001ImFw').subscribe(res => {
+    this.homeService.getListedProperty('0054K000001L99mQAC').subscribe(res => {
       console.log("all property is", res);
     })
+
+
     let res = this.homeService.getUserLocation().then(res => {
       console.log('res is', res);
       this.lat = res.lat;
@@ -32,9 +44,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(): void {
+    this.onDoubleClickMap();
+  }
 
   markers = [
-
     {
       lat: 21.1594627,
       lng: 72.6822083,
@@ -56,6 +70,26 @@ export class HomeComponent implements OnInit {
     }
 
   ];
+
+  onDoubleClickMap() {
+    const map = document.getElementById('map');
+    fromEvent(map, 'dblclick').subscribe(event => {
+      console.log(event);
+      this.router.navigate(['/home/add-property']);
+    })
+  }
+
+  onCountryChnage(e: any) {
+    console.log('country is', e.target.value)
+    this.country = e.target.value;
+    if (this.country) {
+      this.http.get(`https://partial-land-sterling.cs81.force.com/LandsterlingWebapp/services/apexrest/LandSterling?UserId=0054K000001L99mQAC
+      &country=${this.country}`).subscribe(res => {
+        console.log('res is', res);
+      })
+    }
+
+  }
 
   openAddPropertyForm() {
     console.log('called property')

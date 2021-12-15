@@ -42,10 +42,10 @@
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="" id="" class="form-control form-select">
+                                <select name="" id="" class="form-control form-select" (change)="onCountryChnage($event)">
                    <option value="">Country</option>
-            <option value="">Saudi Arabia</option>
-            <option value="">Dubai</option>
+            <option>Saudi Arabia</option>
+            <option>Dubai</option>
                 </select>
                             </div>
                         </div>
@@ -54,8 +54,8 @@
                         <div class="col_selector">
                             <div class="form-group">
                                 <select name="" id="" class="form-control form-select">
-                  <option value="">Country</option>
-                  <option value="">Country</option>
+                  <option value="">City</option>
+                  <option value=""></option>
                   <option value="">Country</option>
                   <option value="">Country</option>
                 </select>
@@ -97,29 +97,42 @@
                         <div class="col_selector">
                             <div class="form-group">
                                 <select name="" id="" class="form-control form-select">
-                    <option value="">Property Use</option>
-            
-            <option value="">Residential</option>
-            <option value="">Commercial</option>
-            <option value="">Industrial</option>
-            <option value="">Retail</option>
-            <option value="">Hospitality</option>
-            <option value="">Healthcare</option>
-            <option value="">Education</option>
-            <option value="">Storage</option>
-            <option value="">Leisure/Entertainment</option>
-            <option value="">Mixed Use</option>
-            <option value="">F&B</option>
-            <option value="">Oil & Gas</option>
-            <option value="">Construction</option>
-            <option value="">Packaging</option>
-            <option value="">Transport</option>
-            <option value="">Telecom</option>
-            <option value="">Agriculture</option>
-            <option value="">Energy</option>
-            <option value="">Mining</option>
-            <option value="">Multipurpose</option>
-            <option value="">Others</option>
+                     <option value="">Type</option>
+                    <option value="">Apartment</option>
+                    <option value="">Penthouse</option>
+                    <option value="">Townhouse</option>
+                    <option value="">Villa</option>
+                    <option value="">Bungalow</option>
+                    <option value="">Compound</option>
+                    <option value="">Bulk Units</option>
+                    <option value="">Whole Building</option>
+                    <option value="">Duplex</option>
+                    <option value="">Full floor</option>
+                    <option value="">Half floor</option>
+                    <option value="">Triplex</option>
+                    <option value="">Chalet</option>
+                    <option value="">Land</option>
+                    <option value="">Retail</option>
+                    <option value="">Shop</option>
+                    <option value="">Office Space</option>
+                    <option value="">Show Room</option>
+                    <option value="">Restaurant</option>
+                    <option value="">Hotel</option>
+                    <option value="">Apartment</option>
+                    <option value="">Hotel</option>
+                    <option value="">School</option>
+                    <option value="">Hospital</option>
+                    <option value="">Warehouse</option>
+                    <option value="">Factory</option>
+                    <option value="">Labour Camp</option>
+                    <option value="">Raw Land</option>
+                    <option value="">Strip Mall/Plaza</option>
+                    <option value="">Petrol Station</option>
+                    <option value="">Wellness Center</option>
+                    <option value="">Medical Center</option>
+                    <option value="">Gym</option>
+                    <option value="">Resort</option>
+
                 </select>
                             </div>
                         </div>
@@ -128,41 +141,9 @@
                         <div class="col_selector">
                             <div class="form-group">
                                 <select name="" id="" class="form-control form-select">
-                     <option value="">Type</option>
-            <option value="">Apartment</option>
-            <option value="">Penthouse</option>
-            <option value="">Townhouse</option>
-            <option>Villa</option>
-            <option value="">Bungalow</option>
-            <option value="">Compound</option>
-            <option value="">Bulk Units</option>
-            <option value="">Whole Building</option>
-            <option value="">Duplex</option>
-            <option value="">Full floor</option>
-            <option value="">Half floor</option>
-            <option value="">Triplex</option>
-            <option value="">Chalet</option>
-            <option value="">Land</option>
-            <option value="">Retail</option>
-            <option value="">Shop</option>
-            <option value="">Office Space</option>
-            <option value="">Show Room</option>
-            <option value="">Restaurant</option>
-            <option value="">Hotel</option>
-            <option value="">Apartment</option>
-            <option value="">Hotel</option>
-            <option value="">School</option>
-            <option value="">Hospital</option>
-            <option value="">Warehouse</option>
-            <option value="">Factory</option>
-            <option value="">Labour Camp</option>
-            <option value="">Raw Land</option>
-            <option value="">Strip Mall/Plaza</option>
-            <option value="">Petrol Station</option>
-            <option value="">Wellness Center</option>
-            <option value="">Medical Center</option>
-            <option value="">Gym</option>
-            <option value="">Resort</option>
+                     <option value="">Status</option>
+            <option value="">Active</option>
+          
                 </select>
                             </div>
                         </div>
@@ -186,11 +167,13 @@
             <div class="col-md-9">
                 <div class="" data-aos="zoom-in" data-aos-duration="3000">
                     <!-- <img src="assets/images/map1.png" class="img-fluid w-100" alt="" /> -->
-                    <agm-map [latitude]="lat" [longitude]="lng" class="w-100" (click)="openAddPropertyForm()">
-                        <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="marker.iconUrl"></agm-marker>
-                        <agm-info-window #infoWindow>
-                            {{ markers.label }}
-                        </agm-info-window>
+                    <agm-map [latitude]="lat" [longitude]="lng" class="w-100" id="map">
+                        <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="marker.iconUrl">
+                            <agm-info-window #infoWindow>
+                                {{ marker.label }}
+                            </agm-info-window>
+                        </agm-marker>
+
                     </agm-map>
                 </div>
             </div>

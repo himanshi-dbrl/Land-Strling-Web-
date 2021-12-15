@@ -116,7 +116,7 @@ export class AddPropertyComponent implements OnInit {
       city: ['', [Validators.required]],
       address: ['', [Validators.required]],
       title2: ['', [Validators.required]],
-      image: ['', [Validators.required]]
+      // image: ['', [Validators.required]]
 
 
     });
@@ -148,14 +148,15 @@ export class AddPropertyComponent implements OnInit {
       }, function (results) {
         console.log('enter on geocoder func');
         if (results[0]) {
+
           that.currentLocation = results[0].address_components;
           console.log(results[0].address_components);
           //set values in input of their respective
-          this.addProperty.patchValue({
-            country: this.currentLocation[7].long_name,
-            zip: this.currentLocation[8].long_name,
-            area: this.currentLocation[2].long_name,
-            city: this.currentLocation[4].long_name,
+          that.addProperty.patchValue({
+            country: that.currentLocation[7].long_name,
+            zip: that.currentLocation[8].long_name,
+            area: that.currentLocation[2].long_name,
+            city: that.currentLocation[4].long_name,
             address: results[0].formatted_address,
           });
         } else {
@@ -205,7 +206,7 @@ export class AddPropertyComponent implements OnInit {
         "city": this.addProperty.value.city,
         "area": this.addProperty.value.area,
         "country": "Saudi Arabia",
-        "UserId": "0054K000001ImFw"
+        "UserId": "0054K000001L99mQAC"
       }
     }
     this.homeService.addProperty(data).subscribe(res => {

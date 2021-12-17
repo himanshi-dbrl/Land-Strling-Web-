@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   latit: any;
   lngit: any;
    mark =[];
+   FooterData:any;
 
   
 
@@ -32,7 +33,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   propertyStatus: string = null;
   userId: any = '0054K000001L99mQAC';
   selectedLat: Number = 0;
-selectedLng: Number = 0;
+  selectedLng: Number = 0;
   constructor(
     // public dialog: MatDialog
     private http: HttpClient,
@@ -47,25 +48,21 @@ selectedLng: Number = 0;
       this.latit = res.lat;
       this.lngit = res.lng;
     });
-    this.homeService.getListedProperty('0054K000001L99mQAC').subscribe(res => {
+    this.homeService.getListedProperty({UserId:"0054K000001ImFw"}).subscribe(res => {
+
       console.log("all property is", res);
- 
       //console.log("all property is", res.data[0].pba__Longitude_pb__c); 
-       var i=1;
-       
-      for (let data of res.data) { 
+      var reson:any=res;
+      for (let data of reson.data) { 
         console.log(data);
-        var ov;
-        
+        var ov;        
         ov=
           { 
            lat: this.latit,
            lng: this.lngit,
-           label: '',
-           iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002",
-            no:i
-         };
-         i++;
+           label: 'Current Location',
+           iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002",         
+         };        
           this.mark.push(ov);
         if(data){
           ov={
@@ -75,7 +72,6 @@ selectedLng: Number = 0;
                 iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4"
           } 
           this.mark.push(ov);
-
         }
 
 
@@ -85,12 +81,10 @@ selectedLng: Number = 0;
     })
   }
 
- 
-
   ngAfterViewInit(): void {
     this.onDoubleClickMap();
   }
- 
+
 
   onDoubleClickMap() {
 
@@ -135,14 +129,26 @@ selectedLng: Number = 0;
     this.showFooterFilter = true;
   }
 
-  markerClicked(lat:number,lng:number){
-this.selectedLat = lat;
-this.selectedLng = lng;
-console.log('getting clicked address latitude',this.selectedLat );
-console.log('getting clicked address longitude',this.selectedLng);
 
-this.http.get(`https://partial-land-sterling.cs81.force.com/LandsterlingWebapp/services/apexrest/LandSterling?UserId=0054K000001L99mQAC&longitude=${this.selectedLat}&latitude=${this.selectedLng}`).subscribe(res => {
-  console.log('oour data is', res);
+
+  markerClicked(lat:number,lng:number){
+    this.showFooterFilter = false;
+  this.selectedLat = lat;
+  this.selectedLng = lng;
+  console.log('getting clicked address latitude',this.selectedLat );
+  console.log('getting clicked address longitude',this.selectedLng);
+
+  this.http.get(`https://partial-land-sterling.cs81.force.com/LandsterlingWebapp/services/apexrest/LandSterling?UserId=0054K000001L99mQAC&longitude=${this.selectedLat}&latitude=${this.selectedLng}`).subscribe((res:any) => {
+  console.log('our data is', res);
+  if(res)
+  { 
+  this.showFooterFilter = true;
+  this.FooterData="";
+  this.FooterData=res.data;
+  console.log(this.FooterData); 
+
+  }
+  
     })
   }
 

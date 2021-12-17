@@ -19,6 +19,7 @@ export class AddPropertyComponent implements OnInit {
   submitted: boolean = false;
   lat: any;
   lng: any;
+  area1: any;
   address: any;
   title = 'micRecorder';
   //google: any;
@@ -145,20 +146,32 @@ export class AddPropertyComponent implements OnInit {
       let that = this;
       geocoder.geocode({
         'location': latlng
-      }, function (results) {
+      }, function (results:any) {
         console.log('enter on geocoder func');
-        if (results[0]) {
 
+        if (results[0]) {
           that.currentLocation = results[0].address_components;
-          console.log(results[0].address_components);
+          console.log('distance',results);
           //set values in input of their respective
-          that.addProperty.patchValue({
-            country: that.currentLocation[7].long_name,
-            zip: that.currentLocation[8].long_name,
-            area: that.currentLocation[2].long_name,
-            city: that.currentLocation[4].long_name,
-            address: results[0].formatted_address,
-          });
+          for (var val of results[0].address_components) {
+            console.log(val); // prints values: 10, 20, 30, 40
+            console.log("area",val.types);
+            if(val.types[0]==['postal_code'])
+            {
+               that.area1= val.long_name;
+            }
+                    that.addProperty.patchValue({
+          
+  //                     area: that.area1,
+          
+//country: that.currentLocation[7].long_name,
+                      zip: that.area1,
+          
+    //                  city: that.currentLocation[4].long_name,
+                      address:results[0].formatted_address,
+                    });
+                  }
+          
         } else {
           console.log('No results found');
         }

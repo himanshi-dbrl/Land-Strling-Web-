@@ -1,10 +1,12 @@
+import { HttpClient } from "@angular/common/http";
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddPropertyComponent } from '../add-property/add-property.component';
 import { Router } from '@angular/router';
-import { HomeService } from 'src/app/modules/service/home.service';
 import { fromEvent } from 'rxjs';
-import { HttpClient } from "@angular/common/http";
+import { HomeService } from 'src/app/modules/service/home.service';
+
+import { AddPropertyComponent } from '../add-property/add-property.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,6 +18,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   showFooterFilter: boolean = false;
   lat: any;
   lng: any;
+  latit: any;
+  lngit: any;
+   mark =[];
   city: string = null;
   country: string = null;
   state: string = null;
@@ -38,8 +43,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // })
     let res = this.homeService.getUserLocation().then(res => {
       console.log('res is', res);
-      this.lat = res.lat;
-      this.lng = res.lng;
+      this.latit = res.lat;
+      this.lngit = res.lng;
     });
   }
 
@@ -85,12 +90,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
       city: this.city,
       country: this.country
     }).subscribe(data => {
+      this.setMarkers(data);
       console.log('property data', data);
     })
   }
 
   onCountryChnage(event: any) {
     this.country = event.target.value;
+    console.log(this.country);
     this.getPropertyList();
   }
 
@@ -115,5 +122,32 @@ export class HomeComponent implements OnInit, AfterViewInit {
   changeFooterFilter() {
     this.showHeadFilter = false
     this.showFooterFilter = true;
+  }
+
+  private setMarkers(reson){
+    for (let data of reson.data) { 
+      console.log(data);
+      var ov;        
+      ov=
+        { 
+         lat: this.latit,
+         lng: this.lngit,
+         label: 'Current Location',
+         iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002",         
+       };        
+        this.mark.push(ov);
+      if(data){
+        ov={
+              lat:data.pba__Latitude_pb__c,
+              lng:data.pba__Longitude_pb__c,
+              label: data.pba__City_pb__c,
+              iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4"
+        } 
+        this.mark.push(ov);
+      }
+
+
+     }
+
   }
 }

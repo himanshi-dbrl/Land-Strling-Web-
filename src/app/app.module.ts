@@ -13,9 +13,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 //import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ProfileComponent } from './modules/components/profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, LoginPasswordComponent, ForgetPasswordComponent],
+  declarations: [AppComponent, LoginComponent, LoginPasswordComponent, ForgetPasswordComponent, ProfileComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,

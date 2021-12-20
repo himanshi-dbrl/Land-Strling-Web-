@@ -624,3 +624,103 @@ footer {
 .navbar-nav .nav-link:hover {
     color: #c8102e !important;
 }
+
+.profile_section {
+    background-color: #f2f2f2;
+}
+
+.profile_section .custom_card {
+    box-shadow: 1px 2px 7px 2px #d9d9d9;
+    border-radius: 17px;
+}
+
+.profile_input {
+    background-color: #f2f2f2;
+    height: 46px;
+    color: #293d56;
+    border: none;
+    box-shadow: 0px 2px 2px 1px #d9d9d9;
+}
+
+.custom_switch .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.custom_switch .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom_switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.custom_switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.custom_switch input:checked+.slider {
+    background-color: #0c2340;
+}
+
+.custom_switch input:focus+.slider {
+    box-shadow: 0 0 1px #0c2340;
+}
+
+.custom_switch input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+
+/* Rounded sliders */
+
+.custom_switch .slider.round {
+    border-radius: 34px;
+}
+
+.custom_switch .slider.round:before {
+    border-radius: 50%;
+}
+
+.subscribe_part {
+    background-color: #f2f2f2;
+    height: 46px;
+    color: #293d56;
+    border: none;
+    box-shadow: 0px 2px 2px 1px #d9d9d9;
+    padding: 5px 10px;
+}
+
+.custom_btn {
+    background-color: #0c2340;
+    color: #fff;
+}
+
+.important_field {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    color: #0c2340;
+}

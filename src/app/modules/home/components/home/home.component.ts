@@ -27,8 +27,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   propertyUse: string = null;
   propertyType: string = null;
   propertyStatus: string = null;
+  investmentType:string=null;
+ bedroom:number=null;
   selectedLat: Number = 0;
   selectedLng: Number = 0;
+  tableResponse:object;
   userId: any = '0054K000001ImFw';
   constructor(
     // public dialog: MatDialog
@@ -93,11 +96,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
         UserId: this.userId,
         city: this.city,
         country: this.country,
+        propertyTypes: this.propertyType,
+        propertyUse: this.propertyUse,
+        stage: this.propertyStatus,
       })
       .subscribe((data) => {
-                console.log('property data', data);
-        this.setMarkers(data);
         console.log('property data', data);
+        this.setMarkers(data);
       });
   }
 
@@ -151,7 +156,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   private setMarkers(reson) {
-    
+   this.mark=[];
     for (let data of reson.data) {
       
     var ov;     
@@ -174,6 +179,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.mark.push(ov);
       }
     }
+    console.log(this.mark); 
   }
 
   markerClicked(lat: number, lng: number) {
@@ -196,5 +202,61 @@ export class HomeComponent implements OnInit, AfterViewInit {
           console.log(this.FooterData);
         }
       });
+  }
+
+  getPropertyListTable() {
+   
+    this.homeService
+      .getListedProperty({
+        UserId: this.userId,
+        city: this.city,
+        country: this.country,
+        propertyTypes: this.propertyType,
+        propertyUse: this.propertyUse,
+        stage: this.propertyStatus,
+        bedroomSize:this.bedroom ,
+        investmentType:this.investmentType,
+      })
+      .subscribe((data:any) => {
+        console.log('property data', data);
+        this.tableResponse=data.data;
+        console.log('tblerspnse',this.tableResponse);
+
+      });
+  }
+  onCountryChnage2(event: any) {
+    this.country = event.target.value;
+    console.log('second_country',this.country);
+    this.getPropertyListTable();
+  }
+  onCityChnage2(event: any) {
+    this.city = event.target.value;
+    console.log(this.city);
+    this.getPropertyListTable();
+  }
+  onPropertyChnage2(event: any) {
+    this.propertyUse = event.target.value;
+    console.log(this.propertyUse);
+    this.getPropertyListTable();
+  }
+  onTypeChnage2(event: any) {
+    this.propertyType = event.target.value;
+    console.log(this.propertyType);
+    this.getPropertyListTable();
+  }
+  onStatusChnage2(event: any) {
+    this.propertyStatus = event.target.value;
+    console.log(this.propertyStatus);
+    this.getPropertyListTable();
+  }
+  onBedroomChnage2(event: any) {
+    this.bedroom = event.target.value;
+    console.log(this.propertyStatus);
+    this.getPropertyListTable();
+  }
+  onInvestmentChnage2(event: any) {
+    this.investmentType = event.target.value;
+    console.log(this.propertyStatus);
+    this.getPropertyListTable();
   }
 }

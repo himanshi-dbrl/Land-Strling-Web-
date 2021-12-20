@@ -31,7 +31,8 @@ export class HomeService {
       bedroomSize?: number;
       propertyTypes?: string,
       investmentType?: string,
-      status?: string
+      stage?: string,
+      propertyUse?:string
     }
   ) {
     let params = new HttpParams();
@@ -45,6 +46,7 @@ export class HomeService {
         }
       }
     })
+    console.log('params',params);
     return this.http.get(`https://partial-land-sterling.cs81.force.com/LandsterlingWebapp/services/apexrest/LandSterling`, { params });
   }
 

@@ -19,6 +19,10 @@ export class AddPropertyComponent implements OnInit {
   submitted: boolean = false;
   lat: any;
   lng: any;
+  area1: any;
+  zip1: any;
+  country1: any;
+  city1: any;
   address: any;
   title = 'micRecorder';
   //google: any;
@@ -46,7 +50,6 @@ export class AddPropertyComponent implements OnInit {
   ngOnInit(): void {
     this.buildForm();
     this.getLocation();
-    this.getCurrentLocation();
 
   }
 
@@ -110,6 +113,8 @@ export class AddPropertyComponent implements OnInit {
       investment_type: ['', Validators.required],
       l_s_service: ['', Validators.required],
       property_type: ['', Validators.required],
+      latitude: ['', [Validators.required]],
+      longitude: ['', [Validators.required]],
       zip: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
       country: ['', [Validators.required]],
       area: ['', [Validators.required]],
@@ -126,39 +131,66 @@ export class AddPropertyComponent implements OnInit {
 
   getLocation() {
     this.homeService.getUserLocation().then(res => {
-      console.log(res);
+      console.log('res',res);
       this.lat = res.lat,
         this.lng = res.lng
+        this.getCurrentLocation(res);
+
     });
   }
 
-  getCurrentLocation() {
+  getCurrentLocation(res) {
     console.log('start');
     this.mapsAPIloader.load().then(() => {
       console.log('enter on loading');
       let geocoder = new google.maps.Geocoder;
       let latlng = {
-        lat: this.lat,
-        lng: this.lng
+        lat: res.lat,
+        lng: res.lng
       };
       console.log('latlong is', latlng);
       let that = this;
       geocoder.geocode({
         'location': latlng
-      }, function (results) {
+      }, function (results:any) {
         console.log('enter on geocoder func');
-        if (results[0]) {
 
+        if (results[0]) {
           that.currentLocation = results[0].address_components;
-          console.log(results[0].address_components);
+          console.log('distance',results);
           //set values in input of their respective
-          that.addProperty.patchValue({
-            country: that.currentLocation[7].long_name,
-            zip: that.currentLocation[8].long_name,
-            area: that.currentLocation[2].long_name,
-            city: that.currentLocation[4].long_name,
-            address: results[0].formatted_address,
-          });
+          for (var val of results[0].address_components) {
+            console.log(val); // prints values: 10, 20, 30, 40
+            console.log("area",val.types);
+            if(val.types[0]==['postal_code'])
+            {
+               that.zip1= val.long_name;
+            }
+            if(val.types[0]==['country'])
+            {
+               that.country1= val.long_name;
+            }
+            if(val.types[0]==['locality'])
+            {
+               that.city1= val.long_name;
+            }
+            if(val.types[0]==['route'])
+            {
+               that.area1= val.long_name;
+            }
+              that.addProperty.patchValue({
+          
+                       area: that.area1,
+          
+                      country: that.country1,
+                      zip: that.zip1,
+                      latitude:res.lat,
+                      longitude:res.lng,
+                      city: that.city1,
+                      address:results[0].formatted_address,
+                    });
+                  }
+          
         } else {
           console.log('No results found');
         }
@@ -200,13 +232,14 @@ export class AddPropertyComponent implements OnInit {
         "investmentType": this.addProperty.value.investment_type,
         "LSService": this.addProperty.value.l_s_service,
         "propertyType": this.addProperty.value.property_type,
-        "lati": "",
-        "longi": "",
+        "lati": this.addProperty.value.latitude,
+        "longi": this.addProperty.value.longitude,
         "address": this.addProperty.value.address,
         "city": this.addProperty.value.city,
         "area": this.addProperty.value.area,
         "country": "Saudi Arabia",
-        "UserId": "0054K000001L99mQAC"
+        "UserId": "0054K000001L99mQAC",
+        "MapUrl" :`https://maps.google.com/?q=${this.addProperty.value.latitude},${this.addProperty.value.longitude}`
       }
     }
     this.homeService.addProperty(data).subscribe(res => {

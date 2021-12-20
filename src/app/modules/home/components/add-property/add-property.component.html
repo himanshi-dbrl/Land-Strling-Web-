@@ -36,7 +36,32 @@
                             <div class="col_selector">
                                 <div class="form-group position-relative mb-4">
                                     <label for="" class="custom_label">Property Use</label>
-                                    <input type="text" name="property_use" formControlName="property_use" class="form-control custom_input" id="" placeholder="property_use" />
+                                    <select name="property_use" formControlName="property_use" class="form-control custom_input form-select" >
+                                        <option value="">Property Use</option>
+                               
+                                                <option>Residential</option>
+                                                <option>Commercial</option>
+                                                <option>Industrial</option>
+                                                <option>Retail</option>
+                                                <option>Hospitality</option>
+                                                <option>Healthcare</option>
+                                                <option>Education</option>
+                                                <option>Storage</option>
+                                                <option>Leisure/Entertainment</option>
+                                                <option>Mixed Use</option>
+                                                <option>F&B</option>
+                                                <option>Oil & Gas</option>
+                                                <option>Construction</option>
+                                                <option>Packaging</option>
+                                                <option>Transport</option>
+                                                <option>Telecom</option>
+                                                <option>Agriculture</option>
+                                                <option>Energy</option>
+                                                <option>Mining</option>
+                                                <option>Multipurpose</option>
+                                                <option>Others</option>
+                                                    </select> 
+                               
                                     <div *ngIf="submitted && f.property_use.errors" class="text-left">
                                         <div *ngIf="f.property_use.errors.required" class="validation_color text-danger">
                                             Property Use is Mandatory!
@@ -52,7 +77,45 @@
                             <div class="col_selector">
                                 <div class="form-group position-relative mb-4">
                                     <label for="" class="custom_label">Investment Type</label>
-                                    <input type="text" name="investment_type" formControlName="investment_type" class="form-control custom_input" id="" placeholder="investment_type" />
+                                    <select name="investment_type" formControlName="investment_type" class="form-control custom_input form-select" >
+                                        <option value="">Type</option>
+                                       <option>Apartment</option>
+                                       <option>Penthouse</option>
+                                       <option>Townhouse</option>
+                                       <option>Villa</option>
+                                       <option>Bungalow</option>
+                                       <option>Compound</option>
+                                       <option>Bulk Units</option>
+                                       <option>Whole Building</option>
+                                       <option>Duplex</option>
+                                       <option>Full floor</option>
+                                       <option>Half floor</option>
+                                       <option>Triplex</option>
+                                       <option>Chalet</option>
+                                       <option>Land</option>
+                                       <option>Retail</option>
+                                       <option>Shop</option>
+                                       <option>Office Space</option>
+                                       <option>Show Room</option>
+                                       <option>Restaurant</option>
+                                       <option>Hotel</option>
+                                       <option>Apartment</option>
+                                       <option>Hotel</option>
+                                       <option>School</option>
+                                       <option>Hospital</option>
+                                       <option>Warehouse</option>
+                                       <option>Factory</option>
+                                       <option>Labour Camp</option>
+                                       <option>Raw Land</option>
+                                       <option>Strip Mall/Plaza</option>
+                                       <option>Petrol Station</option>
+                                       <option>Wellness Center</option>
+                                       <option>Medical Center</option>
+                                       <option>Gym</option>
+                                       <option>Resort</option>
+                   
+                                   </select>
+                                   
                                     <div *ngIf="submitted && f.investment_type.errors" class="text-left">
                                         <div *ngIf="f.investment_type.errors.required" class="validation_color text-danger">
                                             Investment Type is Mandatory!
@@ -65,7 +128,18 @@
                             <div class="col_selector">
                                 <div class="form-group position-relative mb-4">
                                     <label for="" class="custom_label">LS Service</label>
-                                    <input type="text" name="l_s_service" formControlName="l_s_service" class="form-control custom_input" id="" placeholder="l_s_service" />
+                                    <select  name="l_s_service" formControlName="l_s_service" class="form-control custom_input form-select" >
+                                        <option>None</option>
+                                        <option>Project sales and leasing</option>
+                                        <option>Industrial Consulting</option>
+                                        <option>Investment advisory</option>
+                                        <option>Project and building consulting</option>
+                                        <option>Property Management</option>
+                                        <option>Property valuation</option>
+                                        <option>Strategic consulting</option>
+                                        
+                                        </select>
+
                                     <div *ngIf="submitted && f.l_s_service.errors" class="text-left">
                                         <div *ngIf="f.l_s_service.errors.required" class="validation_color text-danger">
                                             L S Service is Mandatory!
@@ -78,7 +152,44 @@
                             <div class="col_selector">
                                 <div class="form-group position-relative mb-4">
                                     <label for="" class="custom_label">Property Type</label>
-                                    <input type="text" name="property_type" formControlName="property_type" class="form-control custom_input" id="" placeholder="property_type" />
+                                    <select name="property_type" formControlName="property_type" class="form-control custom_input form-select" >
+                                        <option value="">Type</option>
+                                       <option>Apartment</option>
+                                       <option>Penthouse</option>
+                                       <option>Townhouse</option>
+                                       <option>Villa</option>
+                                       <option>Bungalow</option>
+                                       <option>Compound</option>
+                                       <option>Bulk Units</option>
+                                       <option>Whole Building</option>
+                                       <option>Duplex</option>
+                                       <option>Full floor</option>
+                                       <option>Half floor</option>
+                                       <option>Triplex</option>
+                                       <option>Chalet</option>
+                                       <option>Land</option>
+                                       <option>Retail</option>
+                                       <option>Shop</option>
+                                       <option>Office Space</option>
+                                       <option>Show Room</option>
+                                       <option>Restaurant</option>
+                                       <option>Hotel</option>
+                                       <option>Apartment</option>
+                                       <option>Hotel</option>
+                                       <option>School</option>
+                                       <option>Hospital</option>
+                                       <option>Warehouse</option>
+                                       <option>Factory</option>
+                                       <option>Labour Camp</option>
+                                       <option>Raw Land</option>
+                                       <option>Strip Mall/Plaza</option>
+                                       <option>Petrol Station</option>
+                                       <option>Wellness Center</option>
+                                       <option>Medical Center</option>
+                                       <option>Gym</option>
+                                       <option>Resort</option>
+                   
+                                   </select>
                                     <div *ngIf="submitted && f.property_type.errors" class="text-left">
                                         <div *ngIf="f.property_type.errors.required" class="validation_color text-danger">
                                             Property Type is Mandatory!
@@ -90,8 +201,14 @@
                         <div class="col-md-6">
                             <div class="col_selector">
                                 <div class="form-group position-relative mb-4">
-                                    <label for="" class="custom_label">Title2</label>
-                                    <input type="text" name="title2" formControlName="title2" class="form-control custom_input" id="" placeholder="title" />
+                                    <label for="" class="custom_label">Latitude</label>
+                                    <input type="text" name="latitude" formControlName="latitude" class="form-control custom_input" id="" placeholder="latitude" />
+                                </div>
+                            </div>
+                            <div class="col_selector">
+                                <div class="form-group position-relative mb-4">
+                                    <label for="" class="custom_label">Longitude</label>
+                                    <input type="text" name="longitude" formControlName="longitude" class="form-control custom_input" id="" placeholder="longitude" />
                                 </div>
                             </div>
                         </div>
@@ -115,10 +232,7 @@
                             <div class="col_selector">
                                 <div class="form-group position-relative mb-4">
                                     <label for="" class="custom_label">Country</label>
-                                    <select name="country" formControlName="country" class="form-control custom_input form-select" id="">
-                    <option value="USA">USA</option>
-                    <option value="India">India</option>
-                  </select>
+                                    <input name="country" formControlName="country" class="form-control custom_input" id="" placeholder="Country" />
                                     <div *ngIf="submitted && f.country.errors" class="text-left">
                                         <div *ngIf="f.country.errors.required" class="validation_color text-danger">
                                             Country Field is Mandatory!
@@ -131,10 +245,7 @@
                             <div class="col_selector">
                                 <div class="form-group position-relative mb-4">
                                     <label for="" class="custom_label">Area</label>
-                                    <select name="area" formControlName="area" class="form-control custom_input form-select" id="">
-                    <option value="USA">USA</option>
-                    <option value="India">India</option>
-                  </select>
+                                    <input name="area" formControlName="area" class="form-control custom_input" id="" placeholder="Area" />
                                     <div *ngIf="submitted && f.area.errors" class="text-left">
                                         <div *ngIf="f.area.errors.required" class="validation_color text-danger">
                                             Area Field is Mandatory!
@@ -147,10 +258,7 @@
                             <div class="col_selector">
                                 <div class="form-group position-relative mb-4">
                                     <label for="" class="custom_label">City</label>
-                                    <select name="city" formControlName="city" class="form-control custom_input form-select" id="">
-                    <option value="USA">USA</option>
-                    <option value="India">India</option>
-                  </select>
+                                    <input name="city" formControlName="city" class="form-control custom_input" id="" placeholder="City" />
                                     <div *ngIf="submitted && f.city.errors" class="text-left">
                                         <div *ngIf="f.city.errors.required" class="validation_color text-danger">
                                             City Field is Mandatory!
@@ -203,7 +311,7 @@
                     drop your property files here or
                     <span class="text-primary">browse</span>
                   </label>
-                                    <input type="file" formControlName="image" (change)="getFileDetails($event)" name="image" class="d-none" id="upload_img" />
+                                    <input type="file" (change)="getFileDetails($event)" name="" class="d-none" id="upload_img" />
                                     <!-- <div *ngIf="submitted && f.image.errors" class="text-left">
                                         <div *ngIf="f.image.errors.required" class="validation_color text-danger">
                                             Image Field is Mandatory!

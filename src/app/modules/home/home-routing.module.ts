@@ -4,11 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
 import { HomeComponent } from './components/home/home.component';
 import { MapComponent } from './components/map/map.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: 'list', component: HomeComponent },
   { path: 'add-property', component: AddPropertyComponent },
   { path: 'map', component: MapComponent },
+  { path: 'profile', component: ProfileComponent },
   // { path: 'all', component: AddListingComponent }
 ];
 
@@ -16,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}

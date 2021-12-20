@@ -8,9 +8,10 @@ import { AddPropertyComponent } from './components/add-property/add-property.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
-  declarations: [HomeComponent, MapComponent, AddPropertyComponent],
+  declarations: [HomeComponent, MapComponent, AddPropertyComponent, ProfileComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

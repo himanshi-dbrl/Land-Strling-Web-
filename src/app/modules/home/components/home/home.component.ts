@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -10,38 +10,40 @@ import { AddPropertyComponent } from '../add-property/add-property.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-
-  showHeadFilter: boolean = false
+  showHeadFilter: boolean = false;
   showFooterFilter: boolean = false;
   lat: any;
   lng: any;
   latit: any;
   lngit: any;
-   mark =[];
+  mark = [];
+  FooterData: any;
   city: string = null;
   country: string = null;
   state: string = null;
   propertyUse: string = null;
   propertyType: string = null;
   propertyStatus: string = null;
-  userId: any = '0054K000001L99mQAC';
+  selectedLat: Number = 0;
+  selectedLng: Number = 0;
+  userId: any = '0054K000001ImFw';
   constructor(
     // public dialog: MatDialog
     private http: HttpClient,
     public dialog: MatDialog,
     private router: Router,
     private homeService: HomeService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getPropertyList();
     // this.homeService.getListedProperty().subscribe(res => {
     //   console.log("all property is", res);
     // })
-    let res = this.homeService.getUserLocation().then(res => {
+    let res = this.homeService.getUserLocation().then((res) => {
       console.log('res is', res);
       this.latit = res.lat;
       this.lngit = res.lng;
@@ -57,42 +59,46 @@ export class HomeComponent implements OnInit, AfterViewInit {
       lat: 21.1594627,
       lng: 72.6822083,
       label: 'Surat',
-      iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4"
+      iconUrl:
+        'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4',
     },
 
     {
       lat: 23.0204978,
       lng: 72.4396548,
       label: 'Ahmedabad',
-      iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4"
+      iconUrl:
+        'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4',
     },
     {
       lat: 22.2736308,
       lng: 70.7512555,
       label: 'Rajkot',
-      iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002"
-    }
-
+      iconUrl:
+        'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002',
+    },
   ];
 
   onDoubleClickMap() {
     const map = document.getElementById('map');
-    fromEvent(map, 'dblclick').subscribe(event => {
+    fromEvent(map, 'dblclick').subscribe((event) => {
       console.log(event);
       this.router.navigate(['/home/add-property']);
-    })
+    });
   }
 
   getPropertyList() {
-
-    this.homeService.getListedProperty({
-      UserId: this.userId,
-      city: this.city,
-      country: this.country
-    }).subscribe(data => {
-      this.setMarkers(data);
-      console.log('property data', data);
-    })
+    this.homeService
+      .getListedProperty({
+        UserId: this.userId,
+        city: this.city,
+        country: this.country,
+      })
+      .subscribe((data) => {
+                console.log('property data', data);
+        this.setMarkers(data);
+        console.log('property data', data);
+      });
   }
 
   onCountryChnage(event: any) {
@@ -100,11 +106,31 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log(this.country);
     this.getPropertyList();
   }
-
+  onCityChnage(event: any) {
+    this.city = event.target.value;
+    console.log(this.city);
+    this.getPropertyList();
+  }
+  onPropertyChnage(event: any) {
+    this.propertyUse = event.target.value;
+    console.log(this.propertyUse);
+    this.getPropertyList();
+  }
+  onTypeChnage(event: any) {
+    this.propertyType = event.target.value;
+    console.log(this.propertyType);
+    this.getPropertyList();
+  }
+  onStatusChnage(event: any) {
+    this.propertyStatus = event.target.value;
+    console.log(this.propertyStatus);
+    this.getPropertyList();
+  }
+ 
 
   openAddPropertyForm() {
-    console.log('called property')
-    this.router.navigate(['/home/add-property'])
+    console.log('called property');
+    this.router.navigate(['/home/add-property']);
     // this.dialog.open(AddPropertyComponent);
     // this.dialog.open(AddPropertyComponent,
     //   {
@@ -115,39 +141,60 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   changeHeadFilter() {
-    this.showFooterFilter = false
-    this.showHeadFilter = true
+    this.showFooterFilter = false;
+    this.showHeadFilter = true;
   }
 
   changeFooterFilter() {
-    this.showHeadFilter = false
+    this.showHeadFilter = false;
     this.showFooterFilter = true;
   }
 
-  private setMarkers(reson){
-    for (let data of reson.data) { 
-      console.log(data);
-      var ov;        
-      ov=
-        { 
-         lat: this.latit,
-         lng: this.lngit,
-         label: 'Current Location',
-         iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002",         
-       };        
-        this.mark.push(ov);
-      if(data){
-        ov={
-              lat:data.pba__Latitude_pb__c,
-              lng:data.pba__Longitude_pb__c,
-              label: data.pba__City_pb__c,
-              iconUrl: "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4"
-        } 
+  private setMarkers(reson) {
+    
+    for (let data of reson.data) {
+      
+    var ov;     
+      ov = {
+        lat: this.latit,
+        lng: this.lngit,
+        label: 'Current Location',
+        iconUrl:
+          'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FD0002',
+      };
+      this.mark.push(ov);
+      if (data) {
+        ov = {
+          lat: data.pba__Latitude_pb__c,
+          lng: data.pba__Longitude_pb__c,
+          label: data.pba__City_pb__c,
+          iconUrl:
+            'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|4286f4',
+        };
         this.mark.push(ov);
       }
+    }
+  }
 
+  markerClicked(lat: number, lng: number) {
+    this.showFooterFilter = false;
+    this.selectedLat = lat;
+    this.selectedLng = lng;
+    console.log('getting clicked address latitude', this.selectedLat);
+    console.log('getting clicked address longitude', this.selectedLng);
 
-     }
-
+    this.http
+      .get(
+        `https://partial-land-sterling.cs81.force.com/LandsterlingWebapp/services/apexrest/LandSterling?UserId=0054K000001L99mQAC&longitude=${this.selectedLat}&latitude=${this.selectedLng}`
+      )
+      .subscribe((res: any) => {
+        console.log('our data is', res);
+        if (res) {
+          this.showFooterFilter = true;
+          this.FooterData = '';
+          this.FooterData = res.data;
+          console.log(this.FooterData);
+        }
+      });
   }
 }

@@ -42,7 +42,7 @@
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="" id="" class="form-control form-select" (change)="onCountryChnage($event)">
+                                <select name="country" id="country" class="form-control form-select" (change)="onCountryChnage($event)">
                    <option value="">Country</option>
             <option>Saudi Arabia</option>
             <option>Dubai</option>
@@ -53,11 +53,99 @@
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="" id="" class="form-control form-select">
+                                <select name="city" id="city" class="form-control form-select" (change)="onCityChnage($event)">
                   <option value="">City</option>
-                  <option value=""></option>
-                  <option value="">Country</option>
-                  <option value="">Country</option>
+                    <option>Riyadh</option>
+                    <option>Jeddah</option>
+                    <option>Mecca</option>
+                    <option>Medina</option>
+                    <option>Sultanah</option>
+                    <option>Dammam</option>
+                    <option>Ta'if</option>
+                    <option>Tabuk</option>
+                    <option>Al Kharj</option>
+                    <option>Buraydah</option>
+                    <option>Khamis Mushait</option>
+                    <option>Al Hufuf</option>
+                    <option>Al Mubarraz</option>
+                    <option>Hafar Al-Batin</option>
+                    <option>Ha'il</option>
+                    <option>Najran</option>
+                    <option>Al Jubayl</option>
+                    <option>Abha</option>
+                    <option>Yanbu</option>
+                    <option>Khobar</option>
+                    <option>Arar</option>
+                    <option>Sakakah</option>
+                    <option>Jizan</option>
+                    <option>Qurayyat</option>
+                    <option>Dhahran</option>
+                    <option>Al Qatif</option>
+                    <option>Al Bahah</option>
+                    <option>Tarut</option>
+                    <option>Qal`at Bishah</option>
+                    <option>Ar Rass</option>
+                    <option>Ash Shafa</option>
+                    <option>Sayhat</option>
+                    <option>Al Mithnab</option>
+                    <option>Al Khafji</option>
+                    <option>Ad Dawadimi</option>
+                    <option>Sabya</option>
+                    <option>Az Zulfi</option>
+                    <option>Abu `Arish</option>
+                    <option>Safwa</option>
+                    <option>Afif</option>
+                    <option>Rabigh</option>
+                    <option>Rahimah</option>
+                    <option>Turaif</option>
+                    <option>Tubarjal</option>
+                    <option>Ad Dilam</option>
+                    <option>Umm Lajj</option>
+                    <option>Al-`Ula</option>
+                    <option>Abqaiq</option>
+                    <option>Badr Hunayn</option>
+                    <option>Samitah</option>
+                    <option>Al Wajh</option>
+                    <option>Al Bukayriyah</option>
+                    <option>An Nimas</option>
+                    <option>As Sulayyil</option>
+                    <option>Turabah</option>
+                    <option>Al Jumum</option>
+                    <option>Duba</option>
+                    <option>At Taraf</option>
+                    <option>Qaisumah</option>
+                    <option>Al Battaliyah</option>
+                    <option>Al Munayzilah</option>
+                    <option>Adh Dhibiyah</option>
+                    <option>Al Majaridah</option>
+                    <option>Tanumah</option>
+                    <option>Al Qurayn</option>
+                    <option>Umm as Sahik</option>
+                    <option>Sajir</option>
+                    <option>Al Awjam</option>
+                    <option>Farasan</option>
+                    <option>Al Mindak</option>
+                    <option>Al Artawiyah</option>
+                    <option>Al Jubayl</option>
+                    <option>Al Qarah</option>
+                    <option>Marat</option>
+                    <option>Al Jafr</option>
+                    <option>Suwayr</option>
+                    <option>Tumayr</option>
+                    <option>At Tubi</option>
+                    <option>Al Jaradiyah</option>
+                    <option>Al Muwayh</option>
+                    <option>As Saffaniyah</option>
+                    <option>Al Hada</option>
+                    <option>Al Markaz</option>
+                    <option>Misliyah</option>
+                    <option>Al Mutayrifi</option>
+                    <option>Mizhirah</option>
+                    <option>Ad Darb</option>
+                    <option>Julayjilah</option>
+                    <option>Mulayjah</option>
+                    <option>Al Fuwayliq</option>
+                    <option>Tabalah</option>
                 </select>
                             </div>
                         </div>
@@ -65,30 +153,30 @@
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="" id="" class="form-control form-select">
+                                <select name="property" id="property" class="form-control form-select" (change)="onPropertyChnage($event)">
                      <option value="">Property Use</option>
             
-            <option value="">Residential</option>
-            <option value="">Commercial</option>
-            <option value="">Industrial</option>
-            <option value="">Retail</option>
-            <option value="">Hospitality</option>
-            <option value="">Healthcare</option>
-            <option value="">Education</option>
-            <option value="">Storage</option>
-            <option value="">Leisure/Entertainment</option>
-            <option value="">Mixed Use</option>
-            <option value="">F&B</option>
-            <option value="">Oil & Gas</option>
-            <option value="">Construction</option>
-            <option value="">Packaging</option>
-            <option value="">Transport</option>
-            <option value="">Telecom</option>
-            <option value="">Agriculture</option>
-            <option value="">Energy</option>
-            <option value="">Mining</option>
-            <option value="">Multipurpose</option>
-            <option value="">Others</option>
+            <option>Residential</option>
+            <option>Commercial</option>
+            <option>Industrial</option>
+            <option>Retail</option>
+            <option>Hospitality</option>
+            <option>Healthcare</option>
+            <option>Education</option>
+            <option>Storage</option>
+            <option>Leisure/Entertainment</option>
+            <option>Mixed Use</option>
+            <option>F&B</option>
+            <option>Oil & Gas</option>
+            <option>Construction</option>
+            <option>Packaging</option>
+            <option>Transport</option>
+            <option>Telecom</option>
+            <option>Agriculture</option>
+            <option>Energy</option>
+            <option>Mining</option>
+            <option>Multipurpose</option>
+            <option>Others</option>
                 </select>
                             </div>
                         </div>
@@ -96,42 +184,42 @@
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="" id="" class="form-control form-select">
+                                <select name="type" id="type" class="form-control form-select" (change)="onTypeChnage($event)">
                      <option value="">Type</option>
-                    <option value="">Apartment</option>
-                    <option value="">Penthouse</option>
-                    <option value="">Townhouse</option>
-                    <option value="">Villa</option>
-                    <option value="">Bungalow</option>
-                    <option value="">Compound</option>
-                    <option value="">Bulk Units</option>
-                    <option value="">Whole Building</option>
-                    <option value="">Duplex</option>
-                    <option value="">Full floor</option>
-                    <option value="">Half floor</option>
-                    <option value="">Triplex</option>
-                    <option value="">Chalet</option>
-                    <option value="">Land</option>
-                    <option value="">Retail</option>
-                    <option value="">Shop</option>
-                    <option value="">Office Space</option>
-                    <option value="">Show Room</option>
-                    <option value="">Restaurant</option>
-                    <option value="">Hotel</option>
-                    <option value="">Apartment</option>
-                    <option value="">Hotel</option>
-                    <option value="">School</option>
-                    <option value="">Hospital</option>
-                    <option value="">Warehouse</option>
-                    <option value="">Factory</option>
-                    <option value="">Labour Camp</option>
-                    <option value="">Raw Land</option>
-                    <option value="">Strip Mall/Plaza</option>
-                    <option value="">Petrol Station</option>
-                    <option value="">Wellness Center</option>
-                    <option value="">Medical Center</option>
-                    <option value="">Gym</option>
-                    <option value="">Resort</option>
+                    <option>Apartment</option>
+                    <option>Penthouse</option>
+                    <option>Townhouse</option>
+                    <option>Villa</option>
+                    <option>Bungalow</option>
+                    <option>Compound</option>
+                    <option>Bulk Units</option>
+                    <option>Whole Building</option>
+                    <option>Duplex</option>
+                    <option>Full floor</option>
+                    <option>Half floor</option>
+                    <option>Triplex</option>
+                    <option>Chalet</option>
+                    <option>Land</option>
+                    <option>Retail</option>
+                    <option>Shop</option>
+                    <option>Office Space</option>
+                    <option>Show Room</option>
+                    <option>Restaurant</option>
+                    <option>Hotel</option>
+                    <option>Apartment</option>
+                    <option>Hotel</option>
+                    <option>School</option>
+                    <option>Hospital</option>
+                    <option>Warehouse</option>
+                    <option>Factory</option>
+                    <option>Labour Camp</option>
+                    <option>Raw Land</option>
+                    <option>Strip Mall/Plaza</option>
+                    <option>Petrol Station</option>
+                    <option>Wellness Center</option>
+                    <option>Medical Center</option>
+                    <option>Gym</option>
+                    <option>Resort</option>
 
                 </select>
                             </div>
@@ -140,9 +228,11 @@
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="" id="" class="form-control form-select">
+                                <select name="status" id="status" class="form-control form-select" (change)="onStatusChnage($event)">
                      <option value="">Status</option>
-            <option value="">Active</option>
+            <option>Data Check</option>
+            <option>New Property</option>
+            <option>stage</option>
           
                 </select>
                             </div>
@@ -167,9 +257,9 @@
             <div class="col-md-9">
                 <div class="" data-aos="zoom-in" data-aos-duration="3000">
                     <!-- <img src="assets/images/map1.png" class="img-fluid w-100" alt="" /> -->
-                    <agm-map [latitude]="lat" [longitude]="lng" class="w-100" id="map">
-                        <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="marker.iconUrl">
-                            <agm-info-window #infoWindow>
+                    <agm-map [latitude]="latit" [longitude]="lngit" class="w-100" id="map" >
+                        <agm-marker *ngFor="let marker of mark" [latitude]="marker.lat" [longitude]="marker.lng" (markerClick)="markerClicked(marker.lat,marker.lng)"  [iconUrl]="marker.iconUrl" >
+                            <agm-info-window #infoWindow >
                                 {{ marker.label }}
                             </agm-info-window>
                         </agm-marker>
@@ -177,34 +267,16 @@
                     </agm-map>
                 </div>
             </div>
-            <!-- <div *ngIf="showFooterFilter" class="col-md-3">
-                <div class="col_selector" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <h3 class="mb-0 fz16">Gardenia Residence</h3>
+            <div *ngIf="showFooterFilter" class="col-md-3">
+              
+                <div class="col_selector" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000" *ngFor="let datas of FooterData"  >
+                    <div class="d-flex align-items-center justify-content-between"  >
+                        
+                        <h3 class="mb-0 fz16">{{datas.Name}}</h3>
                         <span class="font-weight-bold"><b>&#10005;</b></span>
                     </div>
-                    <p>LS-GR-1039</p>
-                    <div class="mb-2">
-                        <select name="" id="" class="form-control form-select radius_30 form_select">
-              <option value="">Price SR 500,000 - 1,000,000</option>
-              <option value="">Price SR 500,000 - 1,000,000</option>
-              <option value="">Price SR 500,000 - 1,000,000</option>
-            </select>
-                    </div>
-                    <div class="mb-2">
-                        <select name="" id="" class="form-control form-select radius_30 form_select">
-              <option value="">Annual Rent SR 500,000 - 1,000,000</option>
-              <option value="">Annual Rent SR 500,000 - 1,000,000</option>
-              <option value="">Annual Rent SR 500,000 - 1,000,000</option>
-            </select>
-                    </div>
-                    <div class="mb-2">
-                        <select name="" id="" class="form-control form-select radius_30 form_select">
-              <option value="">Status Vacant</option>
-              <option value="">Status Vacant</option>
-              <option value="">Status Vacant</option>
-            </select>
-                    </div>
+                    <p>{{datas.Stage__c}}</p>
+                   
                     <div>
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -233,60 +305,19 @@
                 <span class="visually-hidden">Next</span>
               </button>
                         </div>
-                        <p class="mb-1">LS-GR-1039-101</p>
-                        <p class="mb-1">3 Bed Type-1</p>
-                        <p class="mb-1">Apartment For Sale</p>
-                        <p class="mb-1">Price SAR 756,000</p>
-                        <div class="d-flex align-items-center">
-                            <div class="border-right me-3 text-secondary">
-                                <img src="assets/images/parking.png" alt="" /> 2
-                            </div>
-                            <div class="border-right me-3 text-secondary">
-                                <img src="assets/images/tub.png" alt="" /> 2
-                            </div>
-                            <div class="text-secondary">
-                                <img src="assets/images/sqm.png" alt="" /> 180 Sqm
-                            </div>
-                        </div>
-                        <div class="text-danger">
-                            <img src="assets/images/play-icon.png" class="me-2" alt="" /> Know more
-                        </div>
+                      
+                        <p class="mb-1">{{datas.pba__PropertyType__c}}</p>
+                        <p class="mb-1">{{datas.Investment_Type__c}}</p>
+
+   
+  
                     </div>
-                    <div class="mt-2">
-                        <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/images/slider-img2.png" class="d-block w-100" alt="..." />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/slider-img2.png" class="d-block w-100" alt="..." />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/slider-img2.png" class="d-block w-100" alt="..." />
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-                        </div>
-                        <p class="mb-1">LS-GR-1039-101</p>
-                    </div>
+         
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
-    <section *ngIf="showFooterFilter" class="mx-5">
+    <section *ngIf="showFooterFilter"  class="mx-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -296,7 +327,7 @@
             <div class="d-sm-flex align-items-center justify-content-between">
                 <div class="me-3 w-20">
                     <div class="form-group mb-4">
-                        <select name="" id="" class="form-control form-select">
+                        <select name="" id="" class="form-control form-select" (change)="onCountryChnage($event)">
             <option value="">Country</option>
             <option value="">Saudi Arabia</option>
             <option value="">Dubai</option>

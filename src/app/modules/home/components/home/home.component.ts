@@ -153,6 +153,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   changeFooterFilter() {
     this.showHeadFilter = false;
     this.showFooterFilter = true;
+    this.getPropertyListTable();
   }
 
   private setMarkers(reson) {

@@ -12,9 +12,9 @@
             <div class="col-md-6">
                 <div class="form-group mb-5 position-relative">
                     <select name="" id="" class="form-control custom_search form-select">
-            <option value="">Searchhh</option>
-            <option value="">lorem</option>
-          </select>
+                        <option value="">Search</option>
+                        <option value="">lorem</option>
+                    </select>
                     <i class="fa fa-search"></i>
                     <img src="assets/images/locator-icon.png" class="locator_icon" alt="" />
                     <img src="assets/images/marked-icon.png" class="marked_icon" alt="" />
@@ -22,12 +22,14 @@
             </div>
             <div class="col-md-3">
                 <div class="d-flex">
-                    <button class="btn text-white border me-3 filter_btn" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000" (click)="changeHeadFilter()">
-            <i class="fa fa-filter me-3"></i>Filter
-          </button>
-                    <button class="btn text-white border filter_btn" data-aos="flip-left" data-aos-easing="ease-out-cubic" (click)="changeFooterFilter()" data-aos-duration="3000">
-            List View
-          </button>
+                    <button class="btn text-white border me-3 filter_btn" data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic" data-aos-duration="3000" (click)="changeHeadFilter()">
+                        <i class="fa fa-filter me-3"></i>Filter
+                    </button>
+                    <button class="btn text-white border filter_btn" data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic" (click)="changeFooterFilter()" data-aos-duration="3000">
+                        List View
+                    </button>
                 </div>
             </div>
         </div>
@@ -42,200 +44,205 @@
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="country" id="country" class="form-control form-select" (change)="onCountryChnage($event)">
-                   <option value="">Country</option>
-            <option>Saudi Arabia</option>
-            <option>Dubai</option>
-                </select>
+                                <select name="country" id="country" class="form-control form-select"
+                                    (change)="onCountryChnage($event)">
+                                    <option value="">Country</option>
+                                    <option>Saudi Arabia</option>
+                                    <option>Dubai</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="city" id="city" class="form-control form-select" (change)="onCityChnage($event)">
-                  <option value="">City</option>
-                    <option>Riyadh</option>
-                    <option>Jeddah</option>
-                    <option>Mecca</option>
-                    <option>Medina</option>
-                    <option>Sultanah</option>
-                    <option>Dammam</option>
-                    <option>Ta'if</option>
-                    <option>Tabuk</option>
-                    <option>Al Kharj</option>
-                    <option>Buraydah</option>
-                    <option>Khamis Mushait</option>
-                    <option>Al Hufuf</option>
-                    <option>Al Mubarraz</option>
-                    <option>Hafar Al-Batin</option>
-                    <option>Ha'il</option>
-                    <option>Najran</option>
-                    <option>Al Jubayl</option>
-                    <option>Abha</option>
-                    <option>Yanbu</option>
-                    <option>Khobar</option>
-                    <option>Arar</option>
-                    <option>Sakakah</option>
-                    <option>Jizan</option>
-                    <option>Qurayyat</option>
-                    <option>Dhahran</option>
-                    <option>Al Qatif</option>
-                    <option>Al Bahah</option>
-                    <option>Tarut</option>
-                    <option>Qal`at Bishah</option>
-                    <option>Ar Rass</option>
-                    <option>Ash Shafa</option>
-                    <option>Sayhat</option>
-                    <option>Al Mithnab</option>
-                    <option>Al Khafji</option>
-                    <option>Ad Dawadimi</option>
-                    <option>Sabya</option>
-                    <option>Az Zulfi</option>
-                    <option>Abu `Arish</option>
-                    <option>Safwa</option>
-                    <option>Afif</option>
-                    <option>Rabigh</option>
-                    <option>Rahimah</option>
-                    <option>Turaif</option>
-                    <option>Tubarjal</option>
-                    <option>Ad Dilam</option>
-                    <option>Umm Lajj</option>
-                    <option>Al-`Ula</option>
-                    <option>Abqaiq</option>
-                    <option>Badr Hunayn</option>
-                    <option>Samitah</option>
-                    <option>Al Wajh</option>
-                    <option>Al Bukayriyah</option>
-                    <option>An Nimas</option>
-                    <option>As Sulayyil</option>
-                    <option>Turabah</option>
-                    <option>Al Jumum</option>
-                    <option>Duba</option>
-                    <option>At Taraf</option>
-                    <option>Qaisumah</option>
-                    <option>Al Battaliyah</option>
-                    <option>Al Munayzilah</option>
-                    <option>Adh Dhibiyah</option>
-                    <option>Al Majaridah</option>
-                    <option>Tanumah</option>
-                    <option>Al Qurayn</option>
-                    <option>Umm as Sahik</option>
-                    <option>Sajir</option>
-                    <option>Al Awjam</option>
-                    <option>Farasan</option>
-                    <option>Al Mindak</option>
-                    <option>Al Artawiyah</option>
-                    <option>Al Jubayl</option>
-                    <option>Al Qarah</option>
-                    <option>Marat</option>
-                    <option>Al Jafr</option>
-                    <option>Suwayr</option>
-                    <option>Tumayr</option>
-                    <option>At Tubi</option>
-                    <option>Al Jaradiyah</option>
-                    <option>Al Muwayh</option>
-                    <option>As Saffaniyah</option>
-                    <option>Al Hada</option>
-                    <option>Al Markaz</option>
-                    <option>Misliyah</option>
-                    <option>Al Mutayrifi</option>
-                    <option>Mizhirah</option>
-                    <option>Ad Darb</option>
-                    <option>Julayjilah</option>
-                    <option>Mulayjah</option>
-                    <option>Al Fuwayliq</option>
-                    <option>Tabalah</option>
-                </select>
+                                <select name="city" id="city" class="form-control form-select"
+                                    (change)="onCityChnage($event)">
+                                    <option value="">City</option>
+                                    <option>Riyadh</option>
+                                    <option>Jeddah</option>
+                                    <option>Mecca</option>
+                                    <option>Medina</option>
+                                    <option>Sultanah</option>
+                                    <option>Dammam</option>
+                                    <option>Ta'if</option>
+                                    <option>Tabuk</option>
+                                    <option>Al Kharj</option>
+                                    <option>Buraydah</option>
+                                    <option>Khamis Mushait</option>
+                                    <option>Al Hufuf</option>
+                                    <option>Al Mubarraz</option>
+                                    <option>Hafar Al-Batin</option>
+                                    <option>Ha'il</option>
+                                    <option>Najran</option>
+                                    <option>Al Jubayl</option>
+                                    <option>Abha</option>
+                                    <option>Yanbu</option>
+                                    <option>Khobar</option>
+                                    <option>Arar</option>
+                                    <option>Sakakah</option>
+                                    <option>Jizan</option>
+                                    <option>Qurayyat</option>
+                                    <option>Dhahran</option>
+                                    <option>Al Qatif</option>
+                                    <option>Al Bahah</option>
+                                    <option>Tarut</option>
+                                    <option>Qal`at Bishah</option>
+                                    <option>Ar Rass</option>
+                                    <option>Ash Shafa</option>
+                                    <option>Sayhat</option>
+                                    <option>Al Mithnab</option>
+                                    <option>Al Khafji</option>
+                                    <option>Ad Dawadimi</option>
+                                    <option>Sabya</option>
+                                    <option>Az Zulfi</option>
+                                    <option>Abu `Arish</option>
+                                    <option>Safwa</option>
+                                    <option>Afif</option>
+                                    <option>Rabigh</option>
+                                    <option>Rahimah</option>
+                                    <option>Turaif</option>
+                                    <option>Tubarjal</option>
+                                    <option>Ad Dilam</option>
+                                    <option>Umm Lajj</option>
+                                    <option>Al-`Ula</option>
+                                    <option>Abqaiq</option>
+                                    <option>Badr Hunayn</option>
+                                    <option>Samitah</option>
+                                    <option>Al Wajh</option>
+                                    <option>Al Bukayriyah</option>
+                                    <option>An Nimas</option>
+                                    <option>As Sulayyil</option>
+                                    <option>Turabah</option>
+                                    <option>Al Jumum</option>
+                                    <option>Duba</option>
+                                    <option>At Taraf</option>
+                                    <option>Qaisumah</option>
+                                    <option>Al Battaliyah</option>
+                                    <option>Al Munayzilah</option>
+                                    <option>Adh Dhibiyah</option>
+                                    <option>Al Majaridah</option>
+                                    <option>Tanumah</option>
+                                    <option>Al Qurayn</option>
+                                    <option>Umm as Sahik</option>
+                                    <option>Sajir</option>
+                                    <option>Al Awjam</option>
+                                    <option>Farasan</option>
+                                    <option>Al Mindak</option>
+                                    <option>Al Artawiyah</option>
+                                    <option>Al Jubayl</option>
+                                    <option>Al Qarah</option>
+                                    <option>Marat</option>
+                                    <option>Al Jafr</option>
+                                    <option>Suwayr</option>
+                                    <option>Tumayr</option>
+                                    <option>At Tubi</option>
+                                    <option>Al Jaradiyah</option>
+                                    <option>Al Muwayh</option>
+                                    <option>As Saffaniyah</option>
+                                    <option>Al Hada</option>
+                                    <option>Al Markaz</option>
+                                    <option>Misliyah</option>
+                                    <option>Al Mutayrifi</option>
+                                    <option>Mizhirah</option>
+                                    <option>Ad Darb</option>
+                                    <option>Julayjilah</option>
+                                    <option>Mulayjah</option>
+                                    <option>Al Fuwayliq</option>
+                                    <option>Tabalah</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="property" id="property" class="form-control form-select" (change)="onPropertyChnage($event)">
-                     <option value="">Property Use</option>
-            
-            <option>Residential</option>
-            <option>Commercial</option>
-            <option>Industrial</option>
-            <option>Retail</option>
-            <option>Hospitality</option>
-            <option>Healthcare</option>
-            <option>Education</option>
-            <option>Storage</option>
-            <option>Leisure/Entertainment</option>
-            <option>Mixed Use</option>
-            <option>F&B</option>
-            <option>Oil & Gas</option>
-            <option>Construction</option>
-            <option>Packaging</option>
-            <option>Transport</option>
-            <option>Telecom</option>
-            <option>Agriculture</option>
-            <option>Energy</option>
-            <option>Mining</option>
-            <option>Multipurpose</option>
-            <option>Others</option>
-                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="col_selector">
-                            <div class="form-group">
-                                <select name="type" id="type" class="form-control form-select" (change)="onTypeChnage($event)">
-                     <option value="">Type</option>
-                    <option>Apartment</option>
-                    <option>Penthouse</option>
-                    <option>Townhouse</option>
-                    <option>Villa</option>
-                    <option>Bungalow</option>
-                    <option>Compound</option>
-                    <option>Bulk Units</option>
-                    <option>Whole Building</option>
-                    <option>Duplex</option>
-                    <option>Full floor</option>
-                    <option>Half floor</option>
-                    <option>Triplex</option>
-                    <option>Chalet</option>
-                    <option>Land</option>
-                    <option>Retail</option>
-                    <option>Shop</option>
-                    <option>Office Space</option>
-                    <option>Show Room</option>
-                    <option>Restaurant</option>
-                    <option>Hotel</option>
-                    <option>Apartment</option>
-                    <option>Hotel</option>
-                    <option>School</option>
-                    <option>Hospital</option>
-                    <option>Warehouse</option>
-                    <option>Factory</option>
-                    <option>Labour Camp</option>
-                    <option>Raw Land</option>
-                    <option>Strip Mall/Plaza</option>
-                    <option>Petrol Station</option>
-                    <option>Wellness Center</option>
-                    <option>Medical Center</option>
-                    <option>Gym</option>
-                    <option>Resort</option>
+                                <select name="property" id="property" class="form-control form-select"
+                                    (change)="onPropertyChnage($event)">
+                                    <option value="">Property Use</option>
 
-                </select>
+                                    <option>Residential</option>
+                                    <option>Commercial</option>
+                                    <option>Industrial</option>
+                                    <option>Retail</option>
+                                    <option>Hospitality</option>
+                                    <option>Healthcare</option>
+                                    <option>Education</option>
+                                    <option>Storage</option>
+                                    <option>Leisure/Entertainment</option>
+                                    <option>Mixed Use</option>
+                                    <option>F&B</option>
+                                    <option>Oil & Gas</option>
+                                    <option>Construction</option>
+                                    <option>Packaging</option>
+                                    <option>Transport</option>
+                                    <option>Telecom</option>
+                                    <option>Agriculture</option>
+                                    <option>Energy</option>
+                                    <option>Mining</option>
+                                    <option>Multipurpose</option>
+                                    <option>Others</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="stage" id="status" class="form-control form-select" (change)="onStatusChnage($event)">
-                     <option value="">Status</option>
-                     <option>Active</option>
-            <option>Data Check</option>
-            <option>New Property</option>
+                                <select name="type" id="type" class="form-control form-select"
+                                    (change)="onTypeChnage($event)">
+                                    <option value="">Type</option>
+                                    <option>Apartment</option>
+                                    <option>Penthouse</option>
+                                    <option>Townhouse</option>
+                                    <option>Villa</option>
+                                    <option>Bungalow</option>
+                                    <option>Compound</option>
+                                    <option>Bulk Units</option>
+                                    <option>Whole Building</option>
+                                    <option>Duplex</option>
+                                    <option>Full floor</option>
+                                    <option>Half floor</option>
+                                    <option>Triplex</option>
+                                    <option>Chalet</option>
+                                    <option>Land</option>
+                                    <option>Retail</option>
+                                    <option>Shop</option>
+                                    <option>Office Space</option>
+                                    <option>Show Room</option>
+                                    <option>Restaurant</option>
+                                    <option>Hotel</option>
+                                    <option>Apartment</option>
+                                    <option>Hotel</option>
+                                    <option>School</option>
+                                    <option>Hospital</option>
+                                    <option>Warehouse</option>
+                                    <option>Factory</option>
+                                    <option>Labour Camp</option>
+                                    <option>Raw Land</option>
+                                    <option>Strip Mall/Plaza</option>
+                                    <option>Petrol Station</option>
+                                    <option>Wellness Center</option>
+                                    <option>Medical Center</option>
+                                    <option>Gym</option>
+                                    <option>Resort</option>
 
-          
-                </select>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col_selector">
+                            <div class="form-group">
+                                <select name="stage" id="status" class="form-control form-select"
+                                    (change)="onStatusChnage($event)">
+                                    <option value="">Status</option>
+                                    <option>Active</option>
+                                    <option>Data Check</option>
+                                    <option>New Property</option>
+
+
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -258,9 +265,10 @@
             <div class="col-md-9">
                 <div class="" data-aos="zoom-in" data-aos-duration="3000">
                     <!-- <img src="assets/images/map1.png" class="img-fluid w-100" alt="" /> -->
-                    <agm-map [latitude]="latit" [longitude]="lngit" class="w-100" id="map" >
-                        <agm-marker *ngFor="let marker of mark" [latitude]="marker.lat" [longitude]="marker.lng" (markerClick)="markerClicked(marker.lat,marker.lng)"  [iconUrl]="marker.iconUrl" >
-                            <agm-info-window #infoWindow >
+                    <agm-map [latitude]="latit" [longitude]="lngit" class="w-100" id="map">
+                        <agm-marker *ngFor="let marker of mark" [latitude]="marker.lat" [longitude]="marker.lng"
+                            (markerClick)="markerClicked(marker.lat,marker.lng)" [iconUrl]="marker.iconUrl">
+                            <agm-info-window #infoWindow>
                                 {{ marker.label }}
                             </agm-info-window>
                         </agm-marker>
@@ -269,15 +277,16 @@
                 </div>
             </div>
             <div *ngIf="showFooterFilter" class="col-md-3">
-              
-                <div class="col_selector" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000" *ngFor="let datas of FooterData"  >
-                    <div class="d-flex align-items-center justify-content-between"  >
-                        
+
+                <div class="col_selector" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000"
+                    *ngFor="let datas of FooterData">
+                    <div class="d-flex align-items-center justify-content-between">
+
                         <h3 class="mb-0 fz16">{{datas.Name}}</h3>
                         <span class="font-weight-bold"><b>&#10005;</b></span>
                     </div>
                     <p>{{datas.Stage__c}}</p>
-                   
+
                     <div>
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -291,34 +300,30 @@
                                     <img src="assets/images/slider-img.png" class="d-block w-100" alt="..." />
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                      
+
                         <p class="mb-1">{{datas.pba__PropertyType__c}}</p>
                         <p class="mb-1">{{datas.Investment_Type__c}}</p>
 
-   
-  
+
+
                     </div>
-         
+
                 </div>
             </div>
         </div>
     </div>
-    <section *ngIf="showFooterFilter"  class="mx-5">
+    <section *ngIf="showFooterFilter" class="mx-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -328,190 +333,192 @@
             <div class="d-sm-flex align-items-center justify-content-between">
                 <div class="me-3 w-20">
                     <div class="form-group mb-4">
-                        <select name="country2" id="" class="form-control form-select" (change)="onCountryChnage2($event)">
-            <option value="">Country</option>
-            <option>Saudi Arabia</option>
-            <option>Dubai</option>
-          </select>
+                        <select name="country2" id="" class="form-control form-select"
+                            (change)="onCountryChnage2($event)">
+                            <option value="">Country</option>
+                            <option>Saudi Arabia</option>
+                            <option>Dubai</option>
+                        </select>
                     </div>
                 </div>
                 <div class="me-3 w-20">
                     <div class="form-group mb-4">
-                        <select name="city2" id="city2" class="form-control form-select" (change)="onCityChnage2($event)" >
+                        <select name="city2" id="city2" class="form-control form-select"
+                            (change)="onCityChnage2($event)">
                             <option value="">City</option>
-                              <option>Riyadh</option>
-                              <option>Jeddah</option>
-                              <option>Mecca</option>
-                              <option>Medina</option>
-                              <option>Sultanah</option>
-                              <option>Dammam</option>
-                              <option>Ta'if</option>
-                              <option>Tabuk</option>
-                              <option>Al Kharj</option>
-                              <option>Buraydah</option>
-                              <option>Khamis Mushait</option>
-                              <option>Al Hufuf</option>
-                              <option>Al Mubarraz</option>
-                              <option>Hafar Al-Batin</option>
-                              <option>Ha'il</option>
-                              <option>Najran</option>
-                              <option>Al Jubayl</option>
-                              <option>Abha</option>
-                              <option>Yanbu</option>
-                              <option>Khobar</option>
-                              <option>Arar</option>
-                              <option>Sakakah</option>
-                              <option>Jizan</option>
-                              <option>Qurayyat</option>
-                              <option>Dhahran</option>
-                              <option>Al Qatif</option>
-                              <option>Al Bahah</option>
-                              <option>Tarut</option>
-                              <option>Qal`at Bishah</option>
-                              <option>Ar Rass</option>
-                              <option>Ash Shafa</option>
-                              <option>Sayhat</option>
-                              <option>Al Mithnab</option>
-                              <option>Al Khafji</option>
-                              <option>Ad Dawadimi</option>
-                              <option>Sabya</option>
-                              <option>Az Zulfi</option>
-                              <option>Abu `Arish</option>
-                              <option>Safwa</option>
-                              <option>Afif</option>
-                              <option>Rabigh</option>
-                              <option>Rahimah</option>
-                              <option>Turaif</option>
-                              <option>Tubarjal</option>
-                              <option>Ad Dilam</option>
-                              <option>Umm Lajj</option>
-                              <option>Al-`Ula</option>
-                              <option>Abqaiq</option>
-                              <option>Badr Hunayn</option>
-                              <option>Samitah</option>
-                              <option>Al Wajh</option>
-                              <option>Al Bukayriyah</option>
-                              <option>An Nimas</option>
-                              <option>As Sulayyil</option>
-                              <option>Turabah</option>
-                              <option>Al Jumum</option>
-                              <option>Duba</option>
-                              <option>At Taraf</option>
-                              <option>Qaisumah</option>
-                              <option>Al Battaliyah</option>
-                              <option>Al Munayzilah</option>
-                              <option>Adh Dhibiyah</option>
-                              <option>Al Majaridah</option>
-                              <option>Tanumah</option>
-                              <option>Al Qurayn</option>
-                              <option>Umm as Sahik</option>
-                              <option>Sajir</option>
-                              <option>Al Awjam</option>
-                              <option>Farasan</option>
-                              <option>Al Mindak</option>
-                              <option>Al Artawiyah</option>
-                              <option>Al Jubayl</option>
-                              <option>Al Qarah</option>
-                              <option>Marat</option>
-                              <option>Al Jafr</option>
-                              <option>Suwayr</option>
-                              <option>Tumayr</option>
-                              <option>At Tubi</option>
-                              <option>Al Jaradiyah</option>
-                              <option>Al Muwayh</option>
-                              <option>As Saffaniyah</option>
-                              <option>Al Hada</option>
-                              <option>Al Markaz</option>
-                              <option>Misliyah</option>
-                              <option>Al Mutayrifi</option>
-                              <option>Mizhirah</option>
-                              <option>Ad Darb</option>
-                              <option>Julayjilah</option>
-                              <option>Mulayjah</option>
-                              <option>Al Fuwayliq</option>
-                              <option>Tabalah</option>
-                          </select>
+                            <option>Riyadh</option>
+                            <option>Jeddah</option>
+                            <option>Mecca</option>
+                            <option>Medina</option>
+                            <option>Sultanah</option>
+                            <option>Dammam</option>
+                            <option>Ta'if</option>
+                            <option>Tabuk</option>
+                            <option>Al Kharj</option>
+                            <option>Buraydah</option>
+                            <option>Khamis Mushait</option>
+                            <option>Al Hufuf</option>
+                            <option>Al Mubarraz</option>
+                            <option>Hafar Al-Batin</option>
+                            <option>Ha'il</option>
+                            <option>Najran</option>
+                            <option>Al Jubayl</option>
+                            <option>Abha</option>
+                            <option>Yanbu</option>
+                            <option>Khobar</option>
+                            <option>Arar</option>
+                            <option>Sakakah</option>
+                            <option>Jizan</option>
+                            <option>Qurayyat</option>
+                            <option>Dhahran</option>
+                            <option>Al Qatif</option>
+                            <option>Al Bahah</option>
+                            <option>Tarut</option>
+                            <option>Qal`at Bishah</option>
+                            <option>Ar Rass</option>
+                            <option>Ash Shafa</option>
+                            <option>Sayhat</option>
+                            <option>Al Mithnab</option>
+                            <option>Al Khafji</option>
+                            <option>Ad Dawadimi</option>
+                            <option>Sabya</option>
+                            <option>Az Zulfi</option>
+                            <option>Abu `Arish</option>
+                            <option>Safwa</option>
+                            <option>Afif</option>
+                            <option>Rabigh</option>
+                            <option>Rahimah</option>
+                            <option>Turaif</option>
+                            <option>Tubarjal</option>
+                            <option>Ad Dilam</option>
+                            <option>Umm Lajj</option>
+                            <option>Al-`Ula</option>
+                            <option>Abqaiq</option>
+                            <option>Badr Hunayn</option>
+                            <option>Samitah</option>
+                            <option>Al Wajh</option>
+                            <option>Al Bukayriyah</option>
+                            <option>An Nimas</option>
+                            <option>As Sulayyil</option>
+                            <option>Turabah</option>
+                            <option>Al Jumum</option>
+                            <option>Duba</option>
+                            <option>At Taraf</option>
+                            <option>Qaisumah</option>
+                            <option>Al Battaliyah</option>
+                            <option>Al Munayzilah</option>
+                            <option>Adh Dhibiyah</option>
+                            <option>Al Majaridah</option>
+                            <option>Tanumah</option>
+                            <option>Al Qurayn</option>
+                            <option>Umm as Sahik</option>
+                            <option>Sajir</option>
+                            <option>Al Awjam</option>
+                            <option>Farasan</option>
+                            <option>Al Mindak</option>
+                            <option>Al Artawiyah</option>
+                            <option>Al Jubayl</option>
+                            <option>Al Qarah</option>
+                            <option>Marat</option>
+                            <option>Al Jafr</option>
+                            <option>Suwayr</option>
+                            <option>Tumayr</option>
+                            <option>At Tubi</option>
+                            <option>Al Jaradiyah</option>
+                            <option>Al Muwayh</option>
+                            <option>As Saffaniyah</option>
+                            <option>Al Hada</option>
+                            <option>Al Markaz</option>
+                            <option>Misliyah</option>
+                            <option>Al Mutayrifi</option>
+                            <option>Mizhirah</option>
+                            <option>Ad Darb</option>
+                            <option>Julayjilah</option>
+                            <option>Mulayjah</option>
+                            <option>Al Fuwayliq</option>
+                            <option>Tabalah</option>
+                        </select>
                     </div>
                 </div>
                 <div class="me-3 w-20">
                     <div class="form-group mb-4">
                         <select name="" id="" class="form-control form-select" (change)="onPropertyChnage2($event)">
-            <option value="">Property Use</option>
-            
-            <option>Residential</option>
-            <option>Commercial</option>
-            <option>Industrial</option>
-            <option>Retail</option>
-            <option>Hospitality</option>
-            <option>Healthcare</option>
-            <option>Education</option>
-            <option>Storage</option>
-            <option>Leisure/Entertainment</option>
-            <option>Mixed Use</option>
-            <option>F&B</option>
-            <option>Oil & Gas</option>
-            <option>Construction</option>
-            <option>Packaging</option>
-            <option>Transport</option>
-            <option>Telecom</option>
-            <option>Agriculture</option>
-            <option>Energy</option>
-            <option>Mining</option>
-            <option>Multipurpose</option>
-            <option>Others</option>
+                            <option value="">Property Use</option>
 
-          </select>
+                            <option>Residential</option>
+                            <option>Commercial</option>
+                            <option>Industrial</option>
+                            <option>Retail</option>
+                            <option>Hospitality</option>
+                            <option>Healthcare</option>
+                            <option>Education</option>
+                            <option>Storage</option>
+                            <option>Leisure/Entertainment</option>
+                            <option>Mixed Use</option>
+                            <option>F&B</option>
+                            <option>Oil & Gas</option>
+                            <option>Construction</option>
+                            <option>Packaging</option>
+                            <option>Transport</option>
+                            <option>Telecom</option>
+                            <option>Agriculture</option>
+                            <option>Energy</option>
+                            <option>Mining</option>
+                            <option>Multipurpose</option>
+                            <option>Others</option>
+
+                        </select>
                     </div>
                 </div>
                 <div class="me-3 w-20">
                     <div class="form-group mb-4">
                         <select name="" id="" class="form-control form-select" (change)="onTypeChnage2($event)">
-                    <option>Type</option>
-                    <option>Apartment</option>
-                    <option>Penthouse</option>
-                    <option>Townhouse</option>
-                    <option>Villa</option>
-                    <option>Bungalow</option>
-                    <option>Compound</option>
-                    <option>Bulk Units</option>
-                    <option>Whole Building</option>
-                    <option>Duplex</option>
-                    <option>Full floor</option>
-                    <option>Half floor</option>
-                    <option>Triplex</option>
-                    <option>Chalet</option>
-                    <option>Land</option>
-                    <option>Retail</option>
-                    <option>Shop</option>
-                    <option>Office Space</option>
-                    <option>Show Room</option>
-                    <option>Restaurant</option>
-                    <option>Hotel</option>
-                    <option>Apartment</option>
-                    <option>Hotel</option>
-                    <option>School</option>
-                    <option>Hospital</option>
-                    <option>Warehouse</option>
-                    <option>Factory</option>
-                    <option>Labour Camp</option>
-                    <option>Raw Land</option>
-                    <option>Strip Mall/Plaza</option>
-                    <option>Petrol Station</option>
-                    <option>Wellness Center</option>
-                    <option>Medical Center</option>
-                    <option>Gym</option>
-                    <option>Resort</option>
-          </select>
+                            <option>Type</option>
+                            <option>Apartment</option>
+                            <option>Penthouse</option>
+                            <option>Townhouse</option>
+                            <option>Villa</option>
+                            <option>Bungalow</option>
+                            <option>Compound</option>
+                            <option>Bulk Units</option>
+                            <option>Whole Building</option>
+                            <option>Duplex</option>
+                            <option>Full floor</option>
+                            <option>Half floor</option>
+                            <option>Triplex</option>
+                            <option>Chalet</option>
+                            <option>Land</option>
+                            <option>Retail</option>
+                            <option>Shop</option>
+                            <option>Office Space</option>
+                            <option>Show Room</option>
+                            <option>Restaurant</option>
+                            <option>Hotel</option>
+                            <option>Apartment</option>
+                            <option>Hotel</option>
+                            <option>School</option>
+                            <option>Hospital</option>
+                            <option>Warehouse</option>
+                            <option>Factory</option>
+                            <option>Labour Camp</option>
+                            <option>Raw Land</option>
+                            <option>Strip Mall/Plaza</option>
+                            <option>Petrol Station</option>
+                            <option>Wellness Center</option>
+                            <option>Medical Center</option>
+                            <option>Gym</option>
+                            <option>Resort</option>
+                        </select>
                     </div>
                 </div>
                 <div class="w-20">
                     <div class="form-group mb-4">
                         <select name="stage2" id="" class="form-control form-select" (change)="onStatusChnage2($event)">
                             <option value="">Status</option>
-            <option>Active</option>
-            <option>Data Check</option>
-            <option>New Property</option>
-          </select>
+                            <option>Active</option>
+                            <option>Data Check</option>
+                            <option>New Property</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -519,11 +526,11 @@
                 <div class="col-2">
                     <div class="form-group mb-4">
                         <select name="" id="" class="form-control form-select" (change)="onBedroomChnage2($event)">
-            <option value="">Bedrooms</option>
-            <option value="">Bedrooms</option>
-            <option value="">Bedrooms</option>
-            <option value="">Bedrooms</option>
-          </select>
+                            <option value="">Bedrooms</option>
+                            <option value="">Bedrooms</option>
+                            <option value="">Bedrooms</option>
+                            <option value="">Bedrooms</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-4">
@@ -538,7 +545,8 @@
                   --text-value: '200';
                   --prefix: '$';
                 ">
-                                    <input type="range" min="0" max="10000" step="100" value="200" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))" />
+                                    <input type="range" min="0" max="10000" step="100" value="200"
+                                        oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))" />
                                     <output>20000</output>
                                     <div class="range-slider__progress"></div>
                                 </div>
@@ -557,7 +565,8 @@
                 --text-value: '200';
                 --prefix: '$';
               ">
-                                <input type="range" min="0" max="10000" step="100" value="200" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))" />
+                                <input type="range" min="0" max="10000" step="100" value="200"
+                                    oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))" />
                                 <output>20000</output>
                                 <div class="range-slider__progress"></div>
                             </div>
@@ -566,19 +575,20 @@
                 </div>
                 <div class="col-2">
                     <div class="form-group mb-4">
-                        <select name="investment_type" id="" class="form-control form-select" (change)="onInvestmentChnage2($event)">
-                                
-                        <option>For Sale Opportunity</option>
-                        <option>To Lease Opportunity</option>
-                        <option>Build To Suit Opportunity</option>
-                        <option>R/E Private Equity Opportunity</option>
-                        <option>Income Generating Opportunity</option>
-                        <option>Development Opportunity</option>
-                        <option>Investment/Development Opportunity</option>
-                        <option>Fund Opening Opportunity</option>
-                        <option>Whole Asset to Rent Opportunity</option>
+                        <select name="investment_type" id="" class="form-control form-select"
+                            (change)="onInvestmentChnage2($event)">
 
-          </select>
+                            <option>For Sale Opportunity</option>
+                            <option>To Lease Opportunity</option>
+                            <option>Build To Suit Opportunity</option>
+                            <option>R/E Private Equity Opportunity</option>
+                            <option>Income Generating Opportunity</option>
+                            <option>Development Opportunity</option>
+                            <option>Investment/Development Opportunity</option>
+                            <option>Fund Opening Opportunity</option>
+                            <option>Whole Asset to Rent Opportunity</option>
+
+                        </select>
                     </div>
                 </div>
             </div>
@@ -610,8 +620,8 @@
                                     <th>Price SR</th>
                                 </tr>
                             </thead>
-                            <tbody  *ngFor="let datas of tableResponse" >
-                                
+                            <tbody *ngFor="let datas of tableResponse">
+
                                 <tr>
                                     <td>{{datas.Name}}</td>
                                     <td>Residential</td>

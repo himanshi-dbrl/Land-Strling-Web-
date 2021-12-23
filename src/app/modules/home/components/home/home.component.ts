@@ -259,4 +259,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log(this.propertyStatus);
     this.getPropertyListTable();
   }
+
+  
+
 }

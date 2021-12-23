@@ -1,152 +1,168 @@
 <section class="pt-5 px-3 profile_section" data-aos="fade-up" data-aos-duration="1500">
     <div class="container">
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <div class="col_selector">
-                    <h4 class="fz18">My profile</h4>
-                    <div class="custom_card bg-white p-5 mb-5">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="col_selector">
-                                    <div class="text-center">
-                                        <label for="upload_img">
-                      <div>
-                        <img
-                          src="assets/images/user-icon.png"
-                          class="img-fluid"
-                          width="100"
-                          alt=""
-                        />
-                      </div>
-                    </label>
-                                        <input type="file" name="" id="upload_img" class="d-none" />
-                                    </div>
-                                    <p class="text-center mt-2">Profile Picture</p>
-                                </div>
-                            </div>
-                            <div class="col-md-10">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-4 position-relative">
-                                            <input type="text" name="" class="form-control profile_input" id="" placeholder="Name" />
-                                            <span class="important_field">*</span>
+        <form [formGroup]="userDetailsForm">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="col_selector">
+                        <h4 class="fz18">My profile</h4>
+                        <div class="custom_card bg-white p-5 mb-5">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="col_selector">
+                                        <div class="text-center">
+                                            <label for="upload_img">
+                                                <div>
+                                                    <img src="assets/images/user-icon.png" class="img-fluid" width="100"
+                                                        alt="" />
+                                                </div>
+                                            </label>
+                                            <input type="file" name="" id="upload_img" class="d-none"
+                                                [(ngModel)]="profile_pic" />
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-4 position-relative">
-                                            <input type="text" name="" class="form-control profile_input" id="" placeholder="Last Name" />
-                                            <span class="important_field">*</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-4 position-relative">
-                                            <input type="text" name="" class="form-control profile_input" id="" placeholder="Email" />
-                                            <span class="important_field">*</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-4 position-relative">
-                                            <input type="text" name="" class="form-control profile_input" id="" placeholder="Mobile" />
-                                            <span class="important_field">*</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-4 position-relative">
-                                            <input type="text" name="" class="form-control profile_input" id="" placeholder="Job Title" />
-                                            <span class="important_field">*</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-4 position-relative">
-                                            <input type="text" name="" class="form-control profile_input" id="" placeholder="Company" />
-                                            <span class="important_field">*</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-4 position-relative">
-                                            <input type="text" name="" class="form-control profile_input" id="" placeholder="City" />
-                                            <span class="important_field">*</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-4 position-relative">
-                                            <input type="text" name="" class="form-control profile_input" id="" placeholder="Country" />
-                                            <span class="important_field">*</span>
-                                        </div>
+                                        <p class="text-center mt-2">Profile Picture</p>
                                     </div>
                                 </div>
-                                <div class="row mt-5">
-                                    <div class="col-md-6">
-                                        <div class="col_selector">
-                                            <h4 class="fz18">Change Password</h4>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-6">
                                             <div class="form-group mb-4 position-relative">
-                                                <input type="password" name="" class="form-control profile_input" id="" placeholder="Old Password" />
+                                                <input type="text" name="" class="form-control profile_input" id=""
+                                                    placeholder="First Name" [(ngModel)]="first_name" />
+                                                <span class="important_field">*</span>
                                             </div>
+                                        </div>
+                                        <div class="col-md-6">
                                             <div class="form-group mb-4 position-relative">
-                                                <input type="password" name="" class="form-control profile_input" id="" placeholder="New Password" />
+                                                <input type="text" name="" class="form-control profile_input" id=""
+                                                    placeholder="Last Name" [(ngModel)]="last_name" />
+                                                <span class="important_field">*</span>
                                             </div>
+                                        </div>
+                                        <div class="col-md-6">
                                             <div class="form-group mb-4 position-relative">
-                                                <input type="password" name="" class="form-control profile_input" id="" placeholder="Confirm Password" />
+                                                <input type="email" name="" class="form-control profile_input" id=""
+                                                    placeholder="Email" disabled />
+                                                <span class="important_field">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4 position-relative">
+                                                <input type="text" name="" class="form-control profile_input" id=""
+                                                    placeholder="Mobile" [(ngModel)]="mobile" />
+                                                <span class="important_field">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4 position-relative">
+                                                <input type="text" name="" class="form-control profile_input" id=""
+                                                    placeholder="Job Title" [(ngModel)]="job_title" />
+                                                <span class="important_field">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4 position-relative">
+                                                <input type="text" name="" class="form-control profile_input" id=""
+                                                    placeholder="Company" [(ngModel)]="company" />
+                                                <span class="important_field">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4 position-relative">
+                                                <input type="text" name="" class="form-control profile_input" id=""
+                                                    placeholder="City" [(ngModel)]="city" />
+                                                <span class="important_field">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-4 position-relative">
+                                                <input type="text" name="" class="form-control profile_input" id=""
+                                                    placeholder="Country" [(ngModel)]="country" />
+                                                <span class="important_field">*</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="row mt-5">
+                                        <div class="col-md-6">
+                                            <div class="col_selector">
+                                                <h4 class="fz18">Change Password</h4>
+                                                <div class="form-group mb-4 position-relative">
+                                                    <input type="password" name="" class="form-control profile_input"
+                                                        id="" placeholder="Old Password"
+                                                        [(ngModel)]="currentpassword" />
+                                                </div>
+                                                <div class="form-group mb-4 position-relative">
+                                                    <input type="password" name="" class="form-control profile_input"
+                                                        id="" placeholder="New Password" [(ngModel)]="newpassword" />
+                                                </div>
+                                                <div class="form-group mb-4 position-relative">
+                                                    <input type="password" name="" class="form-control profile_input"
+                                                        id="" placeholder="Confirm Password"
+                                                        [(ngModel)]="confirmpassword" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-md-6">
                                         <div class="col_selector">
                                             <h4 class="fz18">For Admin use only</h4>
                                             <div class="form-group mb-4 position-relative">
-                                                <input type="text" name="" class="form-control profile_input" id="" placeholder="Salesforce User ID (hidden field)" />
+                                                <input type="text" name="" class="form-control profile_input" id=""
+                                                    placeholder="Salesforce User ID (hidden field)" />
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                        <div class="col-12">
+                                            <div class="col_selector">
+                                                <button class="btn custom_btn pe-4" (click)='save()'>Save</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <div class="col_selector">
-                                            <button class="btn custom_btn pe-4">Save</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
+                                    <!-- <div class="row">
                                     <div class="col-12">
                                         <div class="col_selector mt-5">
                                             <h4 class="fz18">Subscribe to email notification</h4>
-                                            <div class="mb-4 d-flex align-items-center justify-content-between subscribe_part">
+                                            <div
+                                                class="mb-4 d-flex align-items-center justify-content-between subscribe_part">
                                                 <p class="mb-0">Land Sterling EMail News Letters</p>
                                                 <div class="custom_switch">
                                                     <label class="switch">
-                            <input type="checkbox" />
-                            <span class="slider round"></span>
-                          </label>
+                                                        <input type="checkbox" />
+                                                        <span class="slider round"></span>
+                                                    </label>
                                                 </div>
                                             </div>
-                                            <div class="mb-4 d-flex align-items-center justify-content-between subscribe_part">
+                                            <div
+                                                class="mb-4 d-flex align-items-center justify-content-between subscribe_part">
                                                 <p class="mb-0">
                                                     New research reports in Land sterling website
                                                 </p>
                                                 <div class="custom_switch">
                                                     <label class="switch">
-                            <input type="checkbox" />
-                            <span class="slider round"></span>
-                          </label>
+                                                        <input type="checkbox" />
+                                                        <span class="slider round"></span>
+                                                    </label>
                                                 </div>
                                             </div>
-                                            <div class="mb-4 d-flex align-items-center justify-content-between subscribe_part">
+                                            <div
+                                                class="mb-4 d-flex align-items-center justify-content-between subscribe_part">
                                                 <p class="mb-0">New video podcasts in realpulse</p>
                                                 <div class="custom_switch">
                                                     <label class="switch">
-                            <input type="checkbox" />
-                            <span class="slider round"></span>
-                          </label>
+                                                        <input type="checkbox" />
+                                                        <span class="slider round"></span>
+                                                    </label>
                                                 </div>
                                             </div>
-                                            <div class="mb-4 d-flex align-items-center justify-content-between subscribe_part">
+                                            <div
+                                                class="mb-4 d-flex align-items-center justify-content-between subscribe_part">
                                                 <p class="mb-0">
                                                     Notify on publish of new research reports in Land sterling website
                                                 </p>
                                                 <div class="custom_switch">
                                                     <label class="switch">
-                            <input type="checkbox" />
-                            <span class="slider round"></span>
-                          </label>
+                                                        <input type="checkbox" />
+                                                        <span class="slider round"></span>
+                                                    </label>
                                                 </div>
                                             </div>
                                             <div>
@@ -154,12 +170,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </section>

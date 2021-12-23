@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as AOS from 'aos';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,14 @@ import * as AOS from 'aos';
 })
 export class AppComponent {
   title = 'landsterling-webapp';
+  constructor(
+    private router: Router,
+  ){}
   ngOnInit() {
     AOS.init();
+  }
+
+  profile(){
+    this.router.navigate(['/home/profile']);
   }
 }

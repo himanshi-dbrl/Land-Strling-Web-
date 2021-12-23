@@ -9,7 +9,7 @@ import   Swal  from 'sweetalert2';
 })
 export class ForgetPasswordComponent implements OnInit {
   invalid: any = true;
-  email_id: any;
+  email: any;
 
   constructor(private _services:ServicesService) { }
 
@@ -20,10 +20,10 @@ export class ForgetPasswordComponent implements OnInit {
   verify(email_id){
     
     let verifyData = {
-      email_id: this.email_id,
+      email: this.email,
     };
     let formData = new FormData();
-    formData.append('email_id',verifyData.email_id)
+    formData.append('email_id',verifyData.email)
     this._services.verify(formData).subscribe(result =>{
      console.log(result);
       //let result = {
@@ -48,8 +48,8 @@ export class ForgetPasswordComponent implements OnInit {
           .then(result => {
             if (result.value) {
                 console.log('verify otp screen',result.value);
-                ServicesService.email_id = email_id
-                console.log('V',ServicesService.email_id);
+                ServicesService.email = email_id
+                console.log('V',ServicesService.email);
                 
                 // this._route.navigate(['/verify'])
             } else if (result.dismiss === Swal.DismissReason.cancel) {

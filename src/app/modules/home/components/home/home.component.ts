@@ -1,11 +1,15 @@
+import { MapsAPILoader } from '@agm/core';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, APP_BOOTSTRAP_LISTENER, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+//import * as $ from 'jquery';
 import { fromEvent } from 'rxjs';
 import { HomeService } from 'src/app/modules/service/home.service';
 
 import { AddPropertyComponent } from '../add-property/add-property.component';
+
+declare var $: any;
 
 @Component({
   selector: 'app-home',
@@ -13,14 +17,17 @@ import { AddPropertyComponent } from '../add-property/add-property.component';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  
   showHeadFilter: boolean = false;
   showFooterFilter: boolean = false;
+  showSidebarFilter: boolean = false;
   lat: any;
   lng: any;
   latit: any;
   lngit: any;
   mark = [];
   FooterData: any;
+  modalData: any='';
   city: string = null;
   country: string = null;
   state: string = null;
@@ -29,16 +36,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
   propertyStatus: string = null;
   investmentType:string=null;
  bedroom:number=null;
-  selectedLat: Number = 0;
-  selectedLng: Number = 0;
+  selectedLat: number = 0;
+  selectedLng: number = 0;
   tableResponse:object;
   userId: any = '0054K000001ImFw';
+  latitude: number ;
+  longitude: number;
+  showModalBox: boolean = false;
+  map:any;
   constructor(
     // public dialog: MatDialog
     private http: HttpClient,
     public dialog: MatDialog,
     private router: Router,
-    private homeService: HomeService
+    private homeService: HomeService,
+    private mapsAPIloader: MapsAPILoader,
+    
+
   ) {}
 
   ngOnInit(): void {
@@ -83,12 +97,50 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
 
   onDoubleClickMap() {
-    const map = document.getElementById('map');
-    fromEvent(map, 'dblclick').subscribe((event) => {
-      console.log(event);
-      this.router.navigate(['/home/add-property']);
+    // var myLatlng = new google.maps.LatLng(41.38,2.18);    
+    //  var cmap;
+    this.mapsAPIloader.load().then(() => {
+      var myOptions = {
+        zoom: 13,
+  //       center: myLatlng,
+    //    mapTypeId:  google.maps.MapTypeId.ROADMAP
+       }
+      console.log('enter on loading');
+//      let geocoder = new google.maps.Geocoder;
+ //   let map = new google.maps.Map(document.getElementById("map"),myOptions);
+  // this.map = document.getElementById('map');
+//   google.maps.event.addListener(this.map, 'dblclick', function(event) {
+      
+//     alert(event.latLng);
+// });
+   //  fromEvent(this.map, 'dblclick').subscribe((event) => { console.log('fff');
+      // var lonlat;
+      // map.on('click', function(e) {
+      //   lonlat = e.coordinate;
+      //   console.log(lonlat);
+      // });
+      
+    //  console.log('cmap',cmap);
+    //  this.homeService.getUserPointerLocation(this.map).then(res => {
+    //   console.log('res',res);
+    //     this.lat = res.lat,
+    //     this.lng = res.lng
+    //     console.log('latlng',this.lat,this.lng);
+    //   });
+   //  });
     });
-  }
+     
+
+    //  const map = document.getElementById('map');
+       //fromEvent(map, 'dblclick').subscribe((event) => {
+    //     if(confirm("Are you sure to add the property")) {
+    //     console.log('event',event);
+    //     this.router.navigate(['/home/add-property']);
+    //     }
+    //   });
+    }
+    
+  
 
   getPropertyList() {
     this.homeService
@@ -184,23 +236,42 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   markerClicked(lat: number, lng: number) {
-    this.showFooterFilter = false;
+    this.modalData='';
+    this.showSidebarFilter = false;
+   // this.showModalBox = true;
     this.selectedLat = lat;
     this.selectedLng = lng;
     console.log('getting clicked address latitude', this.selectedLat);
     console.log('getting clicked address longitude', this.selectedLng);
-
-    this.http
-      .get(
-        `https://partial-land-sterling.cs81.force.com/LandsterlingWebapp/services/apexrest/LandSterling?UserId=0054K000001L99mQAC&longitude=${this.selectedLat}&latitude=${this.selectedLng}`
-      )
-      .subscribe((res: any) => {
+    this.homeService
+    .getListedProperty({
+      UserId: this.userId,
+      latitude: this.selectedLat,
+      longitude: this.selectedLng,
+    })
+    .subscribe((res:any) => {
+  
         console.log('our data is', res);
         if (res) {
-          this.showFooterFilter = true;
+        
+         // this.showSidebarFilter = true;
+          console.log('modalbox',this.showModalBox);
+         // this.showModalBox = true;
+          console.log('modalbox',this.showModalBox);
+
           this.FooterData = '';
+          
+          var length:number=0;
+          length=res.data.length; console.log("length",length);
+          this.showModalBox = true;
+          this.modalData = res.data[0];
+          $("#myModal").modal('show');
+          if(length>1){ 
+            this.showSidebarFilter = true;
           this.FooterData = res.data;
-          console.log(this.FooterData);
+          }
+          console.log('modaldata',this.modalData);
+          console.log('footerData',this.FooterData);
         }
       });
   }
@@ -222,9 +293,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         console.log('property data', data);
         this.tableResponse=data.data;
         console.log('tblerspnse',this.tableResponse);
-
       });
   }
+
   onCountryChnage2(event: any) {
     this.country = event.target.value;
     console.log('second_country',this.country);
@@ -260,4 +331,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log(this.propertyStatus);
     this.getPropertyListTable();
   }
+
+  closeclick($event){
+    this.modalData=null;
+  }
+
+  
 }

@@ -22,14 +22,13 @@
             </div>
             <div class="col-md-3">
                 <div class="d-flex">
-                    <button class="btn text-white border me-3 filter_btn" data-aos="flip-left"
-                        data-aos-easing="ease-out-cubic" data-aos-duration="3000" (click)="changeHeadFilter()">
-                        <i class="fa fa-filter me-3"></i>Filter
-                    </button>
-                    <button class="btn text-white border filter_btn" data-aos="flip-left"
-                        data-aos-easing="ease-out-cubic" (click)="changeFooterFilter()" data-aos-duration="3000">
-                        List View
-                    </button>
+                    <button class="btn text-white border me-3 filter_btn" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000" (click)="changeHeadFilter()">
+            <i class="fa fa-filter me-3"></i>Filter
+
+          </button>
+                    <button class="btn text-white border filter_btn" data-aos="flip-left" data-aos-easing="ease-out-cubic" (click)="changeFooterFilter()" data-aos-duration="3000">
+            List View
+          </button>
                 </div>
             </div>
         </div>
@@ -40,117 +39,171 @@
                 <div class="row">
                     <div class="col-12">
                         <h6>Filter by</h6>
+
                     </div>
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="country" id="country" class="form-control form-select"
-                                    (change)="onCountryChnage($event)">
-                                    <option value="">Country</option>
-                                    <option>Saudi Arabia</option>
-                                    <option>Dubai</option>
-                                </select>
+                                <select name="country" id="country" class="form-control form-select" (change)="onCountryChnage($event)">
+                   <option value="">Country</option>
+            <option>Saudi Arabia</option>
+            <option>UAE</option>
+                </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="col_selector">
                             <div class="form-group">
-                                <select name="city" id="city" class="form-control form-select"
-                                    (change)="onCityChnage($event)">
-                                    <option value="">City</option>
-                                    <option>Riyadh</option>
-                                    <option>Jeddah</option>
-                                    <option>Mecca</option>
-                                    <option>Medina</option>
-                                    <option>Sultanah</option>
-                                    <option>Dammam</option>
-                                    <option>Ta'if</option>
-                                    <option>Tabuk</option>
-                                    <option>Al Kharj</option>
-                                    <option>Buraydah</option>
-                                    <option>Khamis Mushait</option>
-                                    <option>Al Hufuf</option>
-                                    <option>Al Mubarraz</option>
-                                    <option>Hafar Al-Batin</option>
-                                    <option>Ha'il</option>
-                                    <option>Najran</option>
-                                    <option>Al Jubayl</option>
-                                    <option>Abha</option>
-                                    <option>Yanbu</option>
-                                    <option>Khobar</option>
-                                    <option>Arar</option>
-                                    <option>Sakakah</option>
-                                    <option>Jizan</option>
-                                    <option>Qurayyat</option>
-                                    <option>Dhahran</option>
-                                    <option>Al Qatif</option>
-                                    <option>Al Bahah</option>
-                                    <option>Tarut</option>
-                                    <option>Qal`at Bishah</option>
-                                    <option>Ar Rass</option>
-                                    <option>Ash Shafa</option>
-                                    <option>Sayhat</option>
-                                    <option>Al Mithnab</option>
-                                    <option>Al Khafji</option>
-                                    <option>Ad Dawadimi</option>
-                                    <option>Sabya</option>
-                                    <option>Az Zulfi</option>
-                                    <option>Abu `Arish</option>
-                                    <option>Safwa</option>
-                                    <option>Afif</option>
-                                    <option>Rabigh</option>
-                                    <option>Rahimah</option>
-                                    <option>Turaif</option>
-                                    <option>Tubarjal</option>
-                                    <option>Ad Dilam</option>
-                                    <option>Umm Lajj</option>
-                                    <option>Al-`Ula</option>
-                                    <option>Abqaiq</option>
-                                    <option>Badr Hunayn</option>
-                                    <option>Samitah</option>
-                                    <option>Al Wajh</option>
-                                    <option>Al Bukayriyah</option>
-                                    <option>An Nimas</option>
-                                    <option>As Sulayyil</option>
-                                    <option>Turabah</option>
-                                    <option>Al Jumum</option>
-                                    <option>Duba</option>
-                                    <option>At Taraf</option>
-                                    <option>Qaisumah</option>
-                                    <option>Al Battaliyah</option>
-                                    <option>Al Munayzilah</option>
-                                    <option>Adh Dhibiyah</option>
-                                    <option>Al Majaridah</option>
-                                    <option>Tanumah</option>
-                                    <option>Al Qurayn</option>
-                                    <option>Umm as Sahik</option>
-                                    <option>Sajir</option>
-                                    <option>Al Awjam</option>
-                                    <option>Farasan</option>
-                                    <option>Al Mindak</option>
-                                    <option>Al Artawiyah</option>
-                                    <option>Al Jubayl</option>
-                                    <option>Al Qarah</option>
-                                    <option>Marat</option>
-                                    <option>Al Jafr</option>
-                                    <option>Suwayr</option>
-                                    <option>Tumayr</option>
-                                    <option>At Tubi</option>
-                                    <option>Al Jaradiyah</option>
-                                    <option>Al Muwayh</option>
-                                    <option>As Saffaniyah</option>
-                                    <option>Al Hada</option>
-                                    <option>Al Markaz</option>
-                                    <option>Misliyah</option>
-                                    <option>Al Mutayrifi</option>
-                                    <option>Mizhirah</option>
-                                    <option>Ad Darb</option>
-                                    <option>Julayjilah</option>
-                                    <option>Mulayjah</option>
-                                    <option>Al Fuwayliq</option>
-                                    <option>Tabalah</option>
-                                </select>
+                                <select name="city" id="city" class="form-control form-select" (change)="onCityChnage($event)">
+                  <option value="">City</option>
+                    <option>Riyadh</option>
+                    <option>Jeddah</option>
+                    <option>Mecca</option>
+                    <option>Medina</option>
+                    <option>Sultanah</option>
+                    <option>Dammam</option>
+                    <option>Ta'if</option>
+                    <option>Tabuk</option>
+                    <option>Al Kharj</option>
+                    <option>Buraydah</option>
+                    <option>Khamis Mushait</option>
+                    <option>Al Hufuf</option>
+                    <option>Al Mubarraz</option>
+                    <option>Hafar Al-Batin</option>
+                    <option>Ha'il</option>
+                    <option>Najran</option>
+                    <option>Al Jubayl</option>
+                    <option>Abha</option>
+                    <option>Yanbu</option>
+                    <option>Khobar</option>
+                    <option>Arar</option>
+                    <option>Sakakah</option>
+                    <option>Jizan</option>
+                    <option>Qurayyat</option>
+                    <option>Dhahran</option>
+                    <option>Al Qatif</option>
+                    <option>Al Bahah</option>
+                    <option>Tarut</option>
+                    <option>Qal`at Bishah</option>
+                    <option>Ar Rass</option>
+                    <option>Ash Shafa</option>
+                    <option>Sayhat</option>
+                    <option>Al Mithnab</option>
+                    <option>Al Khafji</option>
+                    <option>Ad Dawadimi</option>
+                    <option>Sabya</option>
+                    <option>Az Zulfi</option>
+                    <option>Abu `Arish</option>
+                    <option>Safwa</option>
+                    <option>Afif</option>
+                    <option>Rabigh</option>
+                    <option>Rahimah</option>
+                    <option>Turaif</option>
+                    <option>Tubarjal</option>
+                    <option>Ad Dilam</option>
+                    <option>Umm Lajj</option>
+                    <option>Al-`Ula</option>
+                    <option>Abqaiq</option>
+                    <option>Badr Hunayn</option>
+                    <option>Samitah</option>
+                    <option>Al Wajh</option>
+                    <option>Al Bukayriyah</option>
+                    <option>An Nimas</option>
+                    <option>As Sulayyil</option>
+                    <option>Turabah</option>
+                    <option>Al Jumum</option>
+                    <option>Duba</option>
+                    <option>At Taraf</option>
+                    <option>Qaisumah</option>
+                    <option>Al Battaliyah</option>
+                    <option>Al Munayzilah</option>
+                    <option>Adh Dhibiyah</option>
+                    <option>Al Majaridah</option>
+                    <option>Tanumah</option>
+                    <option>Al Qurayn</option>
+                    <option>Umm as Sahik</option>
+                    <option>Sajir</option>
+                    <option>Al Awjam</option>
+                    <option>Farasan</option>
+                    <option>Al Mindak</option>
+                    <option>Al Artawiyah</option>
+                    <option>Al Jubayl</option>
+                    <option>Al Qarah</option>
+                    <option>Marat</option>
+                    <option>Al Jafr</option>
+                    <option>Suwayr</option>
+                    <option>Tumayr</option>
+                    <option>At Tubi</option>
+                    <option>Al Jaradiyah</option>
+                    <option>Al Muwayh</option>
+                    <option>As Saffaniyah</option>
+                    <option>Al Hada</option>
+                    <option>Al Markaz</option>
+                    <option>Misliyah</option>
+                    <option>Al Mutayrifi</option>
+                    <option>Mizhirah</option>
+                    <option>Ad Darb</option>
+                    <option>Julayjilah</option>
+                    <option>Mulayjah</option>
+                    <option>Al Fuwayliq</option>
+                    <option>Tabalah</option>
+                    <option>Abu Dhabi</option>
+                    <option>Ajmān</option>
+                    <option>Al Ain</option>
+                    <option>Al Awdah</option>
+                    <option>Al Fahlayn</option>
+                    <option>Al Fulayyah</option>
+                    <option>Al Fara'</option>
+                    <option>Al Ghabah</option>
+                    <option>Al Ghabam</option>
+                    <option>Al Ghashban</option>
+                    <option>Al Hamraniyah</option>
+                    <option>Al Hamriyah</option>
+                    <option>Al Haybah</option>
+                    <option>Al Hayl</option>
+                    <option>Al Hayr</option>
+                    <option>Al Hayrah</option>
+                    <option>Al Hulaylah</option>
+                    <option>Al Jaddah</option>
+                    <option>Al Khari</option>
+                    <option>Al Khashfah</option>
+                    <option>Al Mahamm</option>
+                    <option>Al Masafirah</option>
+                    <option>Al Mataf</option>
+                    <option>Al Mu'amurah</option>
+                    <option>Al Naslah</option>
+                    <option>Al Qir</option>
+                    <option>Al Quwayz</option>
+                    <option>Al Usayli</option>
+                    <option>Al Yahar</option>
+                    <option>Ar Rafa'ah</option>
+                    <option>Arthaban</option>
+                    <option>Athabat</option>
+                    <option>Ash Sha'm</option>
+                    <option>As Sur</option>
+                    <option>Awanat, Ras al-Khaimah</option>
+                    <option>Baqal</option>
+                    <option>Bidiyah</option>
+                    <option>Daftah</option>
+                    <option>Dhadna</option>
+                    <option>Dibba Al-Fujairah</option>
+                    <option>Dibba Al-Hisn</option>
+                    <option>Dubai</option>
+                    <option>Fujairah</option>
+                    <option>Kalbav</option>
+                    <option>Kawr Fakkān</option>
+                    <option>Mīnā' Jabal 'Alī</option>
+                    <option>Mīnā' Şaqr</option>
+                    <option>Mīnā' Zāyid</option>
+                    <option>Ras al-Khaimah</option>
+                    <option>Umm al-Qaiwain</option>
+                    <option>Quţūf</option>
+                    <option>Ruwais</option>
+                    <option>Sharjah</option>
+                    <option>Sila</option>
+
+                </select>
                             </div>
                         </div>
                     </div>
@@ -265,28 +318,41 @@
             <div class="col-md-9">
                 <div class="" data-aos="zoom-in" data-aos-duration="3000">
                     <!-- <img src="assets/images/map1.png" class="img-fluid w-100" alt="" /> -->
-                    <agm-map [latitude]="latit" [longitude]="lngit" class="w-100" id="map">
-                        <agm-marker *ngFor="let marker of mark" [latitude]="marker.lat" [longitude]="marker.lng"
-                            (markerClick)="markerClicked(marker.lat,marker.lng)" [iconUrl]="marker.iconUrl">
+                    <agm-map [latitude]="latit" [longitude]="lngit" class="w-100" id="map"  >
+                        <agm-marker  *ngFor="let marker of mark" [latitude]="marker.lat" [longitude]="marker.lng" (markerClick)="markerClicked(marker.lat,marker.lng)"  [iconUrl]="marker.iconUrl"   >
                             <agm-info-window #infoWindow>
                                 {{ marker.label }}
                             </agm-info-window>
                         </agm-marker>
-
                     </agm-map>
                 </div>
             </div>
-            <div *ngIf="showFooterFilter" class="col-md-3">
-
-                <div class="col_selector" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000"
-                    *ngFor="let datas of FooterData">
-                    <div class="d-flex align-items-center justify-content-between">
-
+            <div *ngIf="showSidebarFilter" class="col-md-3">
+              
+                <div class="col_selector" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000" *ngFor="let datas of FooterData"  >
+                    <div class="d-flex align-items-center justify-content-between"  >
+                        
                         <h3 class="mb-0 fz16">{{datas.Name}}</h3>
                         <span class="font-weight-bold"><b>&#10005;</b></span>
                     </div>
-                    <p>{{datas.Stage__c}}</p>
-
+                    <p>{{datas.pba_uaefields__Broker_s_Listing_ID__c}}</p> 
+                    <div class="mb-2">
+                        <select name="" id="" class="form-control form-select radius_30 form_select">
+              <option value="">Price SR 500,000 - 1,000,000</option>
+              <option value="">Price SR 500,000 - 1,000,000</option>
+              <option value="">Price SR 500,000 - 1,000,000</option>
+            </select>
+                    </div>
+                    <div class="mb-2">
+                        <select name="" id="" class="form-control form-select radius_30 form_select">
+              <option value="">Annual Rent SR 500,000 - 1,000,000</option>
+              <option value="">Annual Rent SR 500,000 - 1,000,000</option>
+              <option value="">Annual Rent SR 500,000 - 1,000,000</option>
+            </select>
+                    </div>
+                    <div class="mb-2">
+                        <p>{{datas.Property_Status__c}}</p> 
+                    </div>
                     <div>
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -311,9 +377,25 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-
-                        <p class="mb-1">{{datas.pba__PropertyType__c}}</p>
+                        <p>{{datas.pba_uaefields__Broker_s_Listing_ID__c}}</p> 
+                        <p class="mb-1">3 Bed Type-1</p>
                         <p class="mb-1">{{datas.Investment_Type__c}}</p>
+                        <p class="mb-1">Price SAR 756,000</p>
+
+                        <div class="d-flex align-items-center">
+                            <div class="border-right me-3 text-secondary">
+                                <img src="assets/images/parking.png" alt="" /> 2
+                            </div>
+                            <div class="border-right me-3 text-secondary">
+                                <img src="assets/images/tub.png" alt="" /> 2
+                            </div>
+                            <div class="text-secondary">
+                                <img src="assets/images/sqm.png" alt="" /> 180 Sqm
+                            </div>
+                        </div>
+                        <div class="text-danger">
+                            <img src="assets/images/play-icon.png" class="me-2" alt="" /> Know more
+                        </div>
 
 
 
@@ -333,12 +415,11 @@
             <div class="d-sm-flex align-items-center justify-content-between">
                 <div class="me-3 w-20">
                     <div class="form-group mb-4">
-                        <select name="country2" id="" class="form-control form-select"
-                            (change)="onCountryChnage2($event)">
-                            <option value="">Country</option>
-                            <option>Saudi Arabia</option>
-                            <option>Dubai</option>
-                        </select>
+                        <select name="country2" id="" class="form-control form-select" (change)="onCountryChnage2($event)">
+            <option value="">Country</option>
+            <option>Saudi Arabia</option>
+            <option>UAE</option>
+          </select>
                     </div>
                 </div>
                 <div class="me-3 w-20">
@@ -346,98 +427,153 @@
                         <select name="city2" id="city2" class="form-control form-select"
                             (change)="onCityChnage2($event)">
                             <option value="">City</option>
-                            <option>Riyadh</option>
-                            <option>Jeddah</option>
-                            <option>Mecca</option>
-                            <option>Medina</option>
-                            <option>Sultanah</option>
-                            <option>Dammam</option>
-                            <option>Ta'if</option>
-                            <option>Tabuk</option>
-                            <option>Al Kharj</option>
-                            <option>Buraydah</option>
-                            <option>Khamis Mushait</option>
-                            <option>Al Hufuf</option>
-                            <option>Al Mubarraz</option>
-                            <option>Hafar Al-Batin</option>
-                            <option>Ha'il</option>
-                            <option>Najran</option>
-                            <option>Al Jubayl</option>
-                            <option>Abha</option>
-                            <option>Yanbu</option>
-                            <option>Khobar</option>
-                            <option>Arar</option>
-                            <option>Sakakah</option>
-                            <option>Jizan</option>
-                            <option>Qurayyat</option>
-                            <option>Dhahran</option>
-                            <option>Al Qatif</option>
-                            <option>Al Bahah</option>
-                            <option>Tarut</option>
-                            <option>Qal`at Bishah</option>
-                            <option>Ar Rass</option>
-                            <option>Ash Shafa</option>
-                            <option>Sayhat</option>
-                            <option>Al Mithnab</option>
-                            <option>Al Khafji</option>
-                            <option>Ad Dawadimi</option>
-                            <option>Sabya</option>
-                            <option>Az Zulfi</option>
-                            <option>Abu `Arish</option>
-                            <option>Safwa</option>
-                            <option>Afif</option>
-                            <option>Rabigh</option>
-                            <option>Rahimah</option>
-                            <option>Turaif</option>
-                            <option>Tubarjal</option>
-                            <option>Ad Dilam</option>
-                            <option>Umm Lajj</option>
-                            <option>Al-`Ula</option>
-                            <option>Abqaiq</option>
-                            <option>Badr Hunayn</option>
-                            <option>Samitah</option>
-                            <option>Al Wajh</option>
-                            <option>Al Bukayriyah</option>
-                            <option>An Nimas</option>
-                            <option>As Sulayyil</option>
-                            <option>Turabah</option>
-                            <option>Al Jumum</option>
-                            <option>Duba</option>
-                            <option>At Taraf</option>
-                            <option>Qaisumah</option>
-                            <option>Al Battaliyah</option>
-                            <option>Al Munayzilah</option>
-                            <option>Adh Dhibiyah</option>
-                            <option>Al Majaridah</option>
-                            <option>Tanumah</option>
-                            <option>Al Qurayn</option>
-                            <option>Umm as Sahik</option>
-                            <option>Sajir</option>
-                            <option>Al Awjam</option>
-                            <option>Farasan</option>
-                            <option>Al Mindak</option>
-                            <option>Al Artawiyah</option>
-                            <option>Al Jubayl</option>
-                            <option>Al Qarah</option>
-                            <option>Marat</option>
-                            <option>Al Jafr</option>
-                            <option>Suwayr</option>
-                            <option>Tumayr</option>
-                            <option>At Tubi</option>
-                            <option>Al Jaradiyah</option>
-                            <option>Al Muwayh</option>
-                            <option>As Saffaniyah</option>
-                            <option>Al Hada</option>
-                            <option>Al Markaz</option>
-                            <option>Misliyah</option>
-                            <option>Al Mutayrifi</option>
-                            <option>Mizhirah</option>
-                            <option>Ad Darb</option>
-                            <option>Julayjilah</option>
-                            <option>Mulayjah</option>
-                            <option>Al Fuwayliq</option>
-                            <option>Tabalah</option>
-                        </select>
+                              <option>Riyadh</option>
+                              <option>Jeddah</option>
+                              <option>Mecca</option>
+                              <option>Medina</option>
+                              <option>Sultanah</option>
+                              <option>Dammam</option>
+                              <option>Ta'if</option>
+                              <option>Tabuk</option>
+                              <option>Al Kharj</option>
+                              <option>Buraydah</option>
+                              <option>Khamis Mushait</option>
+                              <option>Al Hufuf</option>
+                              <option>Al Mubarraz</option>
+                              <option>Hafar Al-Batin</option>
+                              <option>Ha'il</option>
+                              <option>Najran</option>
+                              <option>Al Jubayl</option>
+                              <option>Abha</option>
+                              <option>Yanbu</option>
+                              <option>Khobar</option>
+                              <option>Arar</option>
+                              <option>Sakakah</option>
+                              <option>Jizan</option>
+                              <option>Qurayyat</option>
+                              <option>Dhahran</option>
+                              <option>Al Qatif</option>
+                              <option>Al Bahah</option>
+                              <option>Tarut</option>
+                              <option>Qal`at Bishah</option>
+                              <option>Ar Rass</option>
+                              <option>Ash Shafa</option>
+                              <option>Sayhat</option>
+                              <option>Al Mithnab</option>
+                              <option>Al Khafji</option>
+                              <option>Ad Dawadimi</option>
+                              <option>Sabya</option>
+                              <option>Az Zulfi</option>
+                              <option>Abu `Arish</option>
+                              <option>Safwa</option>
+                              <option>Afif</option>
+                              <option>Rabigh</option>
+                              <option>Rahimah</option>
+                              <option>Turaif</option>
+                              <option>Tubarjal</option>
+                              <option>Ad Dilam</option>
+                              <option>Umm Lajj</option>
+                              <option>Al-`Ula</option>
+                              <option>Abqaiq</option>
+                              <option>Badr Hunayn</option>
+                              <option>Samitah</option>
+                              <option>Al Wajh</option>
+                              <option>Al Bukayriyah</option>
+                              <option>An Nimas</option>
+                              <option>As Sulayyil</option>
+                              <option>Turabah</option>
+                              <option>Al Jumum</option>
+                              <option>Duba</option>
+                              <option>At Taraf</option>
+                              <option>Qaisumah</option>
+                              <option>Al Battaliyah</option>
+                              <option>Al Munayzilah</option>
+                              <option>Adh Dhibiyah</option>
+                              <option>Al Majaridah</option>
+                              <option>Tanumah</option>
+                              <option>Al Qurayn</option>
+                              <option>Umm as Sahik</option>
+                              <option>Sajir</option>
+                              <option>Al Awjam</option>
+                              <option>Farasan</option>
+                              <option>Al Mindak</option>
+                              <option>Al Artawiyah</option>
+                              <option>Al Jubayl</option>
+                              <option>Al Qarah</option>
+                              <option>Marat</option>
+                              <option>Al Jafr</option>
+                              <option>Suwayr</option>
+                              <option>Tumayr</option>
+                              <option>At Tubi</option>
+                              <option>Al Jaradiyah</option>
+                              <option>Al Muwayh</option>
+                              <option>As Saffaniyah</option>
+                              <option>Al Hada</option>
+                              <option>Al Markaz</option>
+                              <option>Misliyah</option>
+                              <option>Al Mutayrifi</option>
+                              <option>Mizhirah</option>
+                              <option>Ad Darb</option>
+                              <option>Julayjilah</option>
+                              <option>Mulayjah</option>
+                              <option>Al Fuwayliq</option>
+                              <option>Tabalah</option>
+                              <option>Abu Dhabi</option>
+                                <option>Ajmān</option>
+                                <option>Al Ain</option>
+                                <option>Al Awdah</option>
+                                <option>Al Fahlayn</option>
+                                <option>Al Fulayyah</option>
+                                <option>Al Fara'</option>
+                                <option>Al Ghabah</option>
+                                <option>Al Ghabam</option>
+                                <option>Al Ghashban</option>
+                                <option>Al Hamraniyah</option>
+                                <option>Al Hamriyah</option>
+                                <option>Al Haybah</option>
+                                <option>Al Hayl</option>
+                                <option>Al Hayr</option>
+                                <option>Al Hayrah</option>
+                                <option>Al Hulaylah</option>
+                                <option>Al Jaddah</option>
+                                <option>Al Khari</option>
+                                <option>Al Khashfah</option>
+                                <option>Al Mahamm</option>
+                                <option>Al Masafirah</option>
+                                <option>Al Mataf</option>
+                                <option>Al Mu'amurah</option>
+                                <option>Al Naslah</option>
+                                <option>Al Qir</option>
+                                <option>Al Quwayz</option>
+                                <option>Al Usayli</option>
+                                <option>Al Yahar</option>
+                                <option>Ar Rafa'ah</option>
+                                <option>Arthaban</option>
+                                <option>Athabat</option>
+                                <option>Ash Sha'm</option>
+                                <option>As Sur</option>
+                                <option>Awanat, Ras al-Khaimah</option>
+                                <option>Baqal</option>
+                                <option>Bidiyah</option>
+                                <option>Daftah</option>
+                                <option>Dhadna</option>
+                                <option>Dibba Al-Fujairah</option>
+                                <option>Dibba Al-Hisn</option>
+                                <option>Dubai</option>
+                                <option>Fujairah</option>
+                                <option>Kalbav</option>
+                                <option>Kawr Fakkān</option>
+                                <option>Mīnā' Jabal 'Alī</option>
+                                <option>Mīnā' Şaqr</option>
+                                <option>Mīnā' Zāyid</option>
+                                <option>Ras al-Khaimah</option>
+                                <option>Umm al-Qaiwain</option>
+                                <option>Quţūf</option>
+                                <option>Ruwais</option>
+                                <option>Sharjah</option>
+                                <option>Sila</option>
+
+                          </select>
                     </div>
                 </div>
                 <div class="me-3 w-20">
@@ -599,50 +735,60 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Use</th>
+                                    <th>Property Use</th>
                                     <th>Property Type</th>
                                     <th>Investment Type</th>
-                                    <th>Status</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
-                                    <th>Price SR</th>
+                                    <th>Property Status</th>
+                                    <th>Unit Number</th>
+                                    <th>Listing Price</th>
+                                    <th>Price per sqm</th>
+                                    <th>Annual rent</th>
+                                    <th>Monthly Rent per sq/feet</th>
+                                    <th>Currency</th>
+                                    <th>Brokers listing ID</th>
+                                    <th>Property owner</th>
+                                    <th>Developer</th>
+                                    <th>Gross size</th>
+                                    <th>Land area</th>
+                                    <th>Net leaseable area</th>
+                                    <th>Measurement</th>
+                                    <th>Details of investment</th>
+                                    <th>City</th>
+                                    <th>Area</th>
+                                    <th>District</th>
+                                    <th>Country</th>
+                                    <th>Building</th>   
+                                    <th>Project</th>
                                 </tr>
                             </thead>
                             <tbody *ngFor="let datas of tableResponse">
 
                                 <tr>
                                     <td>{{datas.Name}}</td>
-                                    <td>Residential</td>
+                                    <td>{{datas.property_use}}</td>
                                     <td>{{datas.pba__PropertyType__c}}</td>
                                     <td>{{datas.Investment_Type__c}}</td>
                                     <td>{{datas.Stage__c}}</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
-                                    <td>800,000-1,200,000</td>
+                                    <td>{{datas.unit_number}}</td>
+                                    <td>{{datas.listing_price}}</td>
+                                    <td>{{datas.price_sqm}}</td>
+                                    <td>{{datas.annual_rent}}</td>
+                                    <td>{{datas.montly_rent}}</td>
+                                    <td>{{datas.currency}}</td>
+                                    <td>{{datas.brokers_listing}}</td>
+                                    <td>{{datas.property_owner}}</td>
+                                    <td>{{datas.developer}}</td>
+                                    <td>{{datas.gross_size}}</td>
+                                    <td>{{datas.land_area}}</td>
+                                    <td>{{datas.leaseable_area}}</td>
+                                    <td>{{datas.measurement}}</td>
+                                    <td>{{datas.details_investment}}</td>
+                                    <td>{{datas.pba__City_pb__c}}</td>
+                                    <td>{{datas.area}}</td>
+                                    <td>{{datas.district}}</td>
+                                    <td>{{datas.pba__Country_pb__c}}</td>
+                                    <td>{{datas.building}}</td>
+                                    <td>{{datas.project}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -650,5 +796,92 @@
                 </div>
             </div>
         </div>
+
     </section>
-</section>
+</section> 
+        <!-- The Modal -->   
+        <div class="modal" id="myModal"  >
+            <div class="modal-dialog modal-dialog-centered">  
+                <div class="modal-content">  
+                    <!-- Modal Header --> 
+                    <div class="modal-header border-0">  
+                        <!-- <h4 class="modal-title">Modal Heading</h4> -->  
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body"> 
+                        <div>
+                            <!-- Carousel -->
+                            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                                <!-- Indicators/dots -->
+                                <!-- <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                                </div> -->
+        
+                                <!-- The slideshow/carousel -->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="assets/images/modal-img.png" alt="Los Angeles" class="d-block w-100" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/modal-img.png" alt="Chicago" class="d-block w-100" />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/modal-img.png" alt="New York" class="d-block w-100" />
+                                    </div>
+                                </div>
+        
+                                <!-- Left and right controls/icons -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </button>
+                            </div>
+                            <div>
+                                <h4 class="fz20 my-3 font_bold">{{modalData.Name}}</h4>
+                                <p class="mb-1" style="color: #474747">{{modalData.pba_uaefields__Broker_s_Listing_ID__c}}</p>
+                                <p class="mb-1" style="color: #474747">
+                                    <img src="assets/images/location.png" alt="" />{{modalData.pba__Area_pb__c}}-{{modalData.pba__City_pb__c}}
+                                </p>
+                                <p class="mb-1" style="color: #474747">{{modalData.Investment_Type__c}}</p>
+                                <p class="mb-1" style="color: #474747">
+                                    {{modalData.price_sqm}}
+                                </p>
+                                <div class="my-4">
+                                    <ul class="list-unstyled d-flex align-items-center justify-content-between" style="color: #a2a4a5">
+                                        <li>
+                                            <img src="assets/images/bed.png" alt="" class="me-2" />  2
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/bath.png" alt="" class="me-2 border-start border-end" />2-3
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/distance.png" alt="" class="me-2" />{{modalData.pba__TotalArea_pb__c}} 
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-danger">
+                                        <button class="btn">
+                          <img src="assets/images/play-icon-new.png" alt="" />
+                        </button> View units
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Modal footer -->
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                  Close
+                </button>
+                    </div> -->
+                </div>
+            </div>
+        </div>

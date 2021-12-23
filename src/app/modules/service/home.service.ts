@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { HttpcommanService } from 'src/app/services/httpshared.service';
+import { Injectable } from '@angular/core';
 import { filter } from 'rxjs/operators';
+import { HttpcommanService } from 'src/app/services/httpshared.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +24,15 @@ export class HomeService {
     })
   }
 
+  getUserPointerLocation(map):Promise<any>{console.log(map);
+    return new Promise((resolve,reject)=>{
+      google.maps.event.addListener(map, 'click', function(event) {
+    
+        alert(event.latLng);
+    });
+    })
+  }
+
   getListedProperty(
     filters: {
       UserId: any,
@@ -32,7 +42,9 @@ export class HomeService {
       propertyTypes?: string,
       investmentType?: string,
       stage?: string,
-      propertyUse?:string
+      propertyUse?:string,
+      latitude?:number,
+      longitude?:number
     }
   ) {
     let params = new HttpParams();
